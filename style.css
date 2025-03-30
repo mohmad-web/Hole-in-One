@@ -1,0 +1,4641 @@
+/* ✅ استيراد الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+
+/* ✅ إعدادات عامة */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #ffffff;
+    transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+/* مربع الترحيب */
+        .welcome-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("C:\Users\Q Store\Desktop\Hole in One-Unit6\images\صورة للمنتجات.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 280px; /* حجم أصغر */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px; /* حواف ناعمة */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            margin-top: 60px; /* المسافة من الأعلى */
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .welcome-box h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .welcome-box p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-box .btn {
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: #1abc9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .welcome-box .btn:hover {
+            background-color: #16a085;
+        }
+
+        /* الأسهم للتبديل بين الصور */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+
+/* تصميم الجسم */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+}
+
+/* مساحة فوق الشريط */
+.top-space {
+    background-color: #bebebe;
+    padding: 10px 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.top-space:hover {
+    background-color: #2980b9;
+}
+
+.top-space img {
+    width: 180px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.top-space img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* شريط التنقل */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px 50px;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: #34495e;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* تصميم قائمة الروابط */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 25px;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+    transform: translateY(-5px);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1abc9c;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* القوائم المنسدلة */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #34495e;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    min-width: 150px;
+}
+
+nav ul li:hover > ul {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* شريط التنقل في الموبايل */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #ecf0f1;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul.active {
+        display: flex;
+        background-color: #2c3e50;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.welcome-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://tse2.mm.bing.net/th?id=OIP.IOWMb1fhcenyNsE8Zu2lkQHaE8&pid=Api&P=0&h=220');
+    background-size: cover;
+    background-position: center;
+    height: 280px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.welcome-box h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.welcome-box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.welcome-box .btn {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-box .btn:hover {
+    background-color: #16a085;
+}
+
+/* الأسهم للتبديل بين الصور */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+/* تذييل الصفحة */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer ul li a:hover {
+    color: #1abc9c;
+}
+/* تنسيق الشعار */
+.footer-logo img {
+    width: 50px; /* تحديد حجم الشعار */
+    height: auto;
+}
+footer .social-media {
+    margin-bottom: 20px;
+}
+
+footer .social-media a {
+    color: #ecf0f1;
+    font-size: 18px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    color: #1abc9c;
+}
+
+footer .email p {
+    font-size: 16px;
+}
+
+footer .email a {
+    color: #ecf0f1;
+}
+
+footer .email a:hover {
+    color: #1abc9c;
+}
+
+
+
+
+
+
+
+
+
+
+.back-to-top:hover {
+    background-color: #2980b9;
+    transform: scale(1.1); /* تأثير تكبير الزر عند التمرير عليه */
+}
+
+/* إضافة تأثير الظهور */
+.back-to-top.show {
+    display: flex;
+    opacity: 1;
+}
+
+
+/* ✅ تحسين التأثيرات البصرية مع الحفاظ عليها */
+.hero {
+    position: relative;
+    width: 90%;
+    height: 350px;
+    background: url("images/hero-image.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 120px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(152, 96, 96, 0.2);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.0);
+    top: 0;
+    left: 0;
+}
+.hero-container {
+    background-color: white; /* خلفية بيضاء */
+    padding: 20px; /* مسافة داخلية */
+    border-radius: 10px; /* حواف ناعمة */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.20); /* ظل خفيف لجمالية */
+    max-width: 80%; /* تحديد عرض مناسب */
+    margin: auto; /* توسيط العنصر */
+}
+.hero-container {
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8); /* تدرج لوني هادئ */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* ظل ناعم */
+    max-width: 80%;
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير حركة ناعمة */
+}
+/* تصميم المربع في الوضع العادي */
+.hero-container {
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8); /* تدرج لوني فاتح */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: auto;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* تغيير التصميم في الوضع الليلي */
+.dark-mode .hero-container {
+    background: linear-gradient(to bottom, #222, #333); /* تدرج غامق */
+    color: #fff; /* تغيير لون النص */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1); /* ظل مناسب للوضع الليلي */
+}
+
+/* تحسين لون العنوان في الوضع الليلي */
+.dark-mode .hero-container h2 {
+    color: #D3E671; /* لون فاتح أنيق */
+}
+
+/* تحسين لون النص في الوضع الليلي */
+.dark-mode .hero-container p {
+    color: #ccc;
+}
+
+.hero h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.btn-explore {
+    display: inline-block;
+    background: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.btn-explore:hover {
+    background: #FFC107;
+    transform: scale(1.1);
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.image-box {
+    width: 30%;
+    max-width: 300px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 320px;
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+}
+
+/* ✅ تم الحفاظ على جميع التأثيرات والميزات مع إصلاح الأخطاء فقط */
+
+
+.btn-explore:hover {
+    background: #FFC107;
+    transform: scale(1.1);
+}
+
+
+
+
+#backToTop:hover {
+    background: #444;
+    transform: scale(1.1);
+}
+
+/* ✅ تحسين قسم التغذية البصرية */
+.gallery {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.gallery h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.image-grid .image-box {
+    width: 30%;
+    max-width: 300px;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.image-grid .image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-grid .image-box p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* ✅ تأثير عند تمرير الماوس */
+.image-grid .image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ✅ تحسين التخطيط على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* ✅ تصغير أكثر للأجهزة الصغيرة */
+        width: 95%;
+    }
+
+    .hero-content {
+        max-width: 90%;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn-explore {
+        padding: 7px 14px;
+        font-size: 14px;
+    }
+
+    .image-grid .image-box {
+        width: 90%;
+        max-width: 100%;
+    }
+    
+}
+/* ✅ تنسيق قسم من نحن */
+.about-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    color: #008000;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ تنسيق الإنجازات */
+.achievements {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.achievements h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #008000;
+}
+
+/* ✅ تنسيق مربعات الإنجازات */
+.achievements-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.achievement-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 180px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.achievement-box:hover {
+    transform: scale(1.1);
+}
+
+.achievement-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #008000;
+    margin-bottom: 10px;
+}
+
+.achievement-box p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ✅ تحسين التخطيط على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+
+/* تغيير مظهر الأزرار عند التفعيل */
+button:focus {
+    outline: none;
+}
+
+    .achievements-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* الوضع الداكن */
+body[data-page="services"][data-theme="dark"] {
+    background-color: #121212;
+    color: #fff;
+}
+
+body[data-page="services"][data-theme="dark"] header {
+    background-color: #1f1f1f;
+}
+
+body[data-page="services"][data-theme="dark"] .site-title {
+    color: #fff;
+}
+
+body[data-page="services"][data-theme="dark"] .navbar {
+    background-color: #222;
+}
+
+body[data-page="services"][data-theme="dark"] .navbar .nav-links a {
+    color: #bbb;
+}
+
+body[data-page="services"][data-theme="dark"] .navbar .nav-links a:hover,
+body[data-page="services"][data-theme="dark"] .navbar .nav-links .active {
+    color: #ff7f50;
+}
+
+body[data-page="services"][data-theme="dark"] .services-intro {
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+body[data-page="services"][data-theme="dark"] .services-text h2 {
+    color: #ff7f50;
+}
+
+body[data-page="services"][data-theme="dark"] .services-text p {
+    color: #ccc;
+}
+
+body[data-page="services"][data-theme="dark"] .services-image {
+    background-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body[data-page="services"][data-theme="dark"] .service-item {
+    background-color: #333;
+    border-left: 5px solid #ff7f50;
+}
+
+body[data-page="services"][data-theme="dark"] .service-item h3 {
+    color: #ff7f50;
+}
+
+body[data-page="services"][data-theme="dark"] footer {
+    background-color: #1f1f1f;
+}
+
+body[data-page="services"][data-theme="dark"] footer p {
+    color: #bbb;
+}
+
+body[data-page="services"][data-theme="dark"] footer button {
+    background-color: #ff7f50;
+    color: #121212;
+}
+
+body[data-page="services"][data-theme="dark"] footer button:hover {
+    background-color: #fff;
+}
+
+footer button {
+    font-size: 1.2rem;
+    background-color: #0066cc;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+footer button:hover {
+    background-color: #004c99;
+}
+/* ✅ إعدادات الخطوط والألوان العامة */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+
+body.dark-mode .tip-item {
+    background: #222;
+    color: white;
+}
+
+body.dark-mode .tip-item h3 {
+    color: #ffcc00;
+}
+
+body.dark-mode .tip-item .icon {
+    color: #ffcc00;
+}
+
+body.dark-mode footer {
+    background: #222;
+}
+
+/* ✅ تحسين التخطيط على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .tips-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tip-item {
+        width: 90%;
+    }
+}
+/* ✅ تحسين تنسيق النصوص والحدود */
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #2c3e50; /* إضافة حدود للنص */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item .icon {
+    font-size: 40px;
+}
+
+.product-item h3 {
+    margin-top: 10px;
+    color: #2c3e50;
+}
+
+.product-item p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* ✅ تصميم مربعين للصور */
+.products-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.showcase-box {
+    width: 45%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.showcase-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.showcase-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+/* تنسيق القسم الذي يحتوي على الصور */
+.products-showcase {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px; /* مسافة فوق الصور */
+    gap: 20px; /* المسافة بين الصور */
+    margin-bottom: 50px; /* إضافة مسافة تحت مربعات الصور */
+}
+
+.showcase-box {
+    width: 48%; /* عرض الصور */
+    overflow: hidden;
+    border-radius: 8px; /* إضافة حدود دائرية للصورة */
+}
+
+.showcase-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+main {
+    padding-bottom: 100px;  /* إضافة مساحة أسفل المحتوى لتجنب التداخل مع الشريط السفلي */
+}
+/* تنسيق قسم الصور */
+.products-showcase {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* المسافة بين الصور */
+    margin-top: 40px; /* مسافة فوق الصور */
+    margin-bottom: 100px; /* مسافة تحت الصور لتجنب التداخل مع الشريط السفلي */
+}
+
+/* تنسيق المربع الذي يحتوي على الصورة */
+.showcase-box {
+    position: relative;  /* لجعل النص فوق الصورة */
+    width: 48%; /* عرض الصور */
+    overflow: hidden;
+    border-radius: 8px; /* إضافة حدود دائرية للصورة */
+}
+
+.showcase-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* تنسيق النص الذي سيظهر فوق الصورة */
+.image-caption {
+    position: absolute;  /* وضع النص فوق الصورة */
+    top: 10px;  /* المسافة من أعلى المربع */
+    left: 10px;  /* المسافة من اليسار */
+    color: white;  /* لون النص */
+    background-color: rgba(0, 0, 0, 0.5);  /* خلفية داكنة للنص */
+    padding: 5px 10px;  /* إضافة padding للنص */
+    border-radius: 5px;  /* إضافة حدود دائرية للنص */
+    font-size: 16px;  /* حجم النص */
+    font-weight: bold;  /* جعل النص عريض */
+}
+/* الأساسيات */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+/* التنسيق الخاص بالصفحة */
+.packages-intro {
+    background-color: #fff;
+    padding: 50px 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.packages-intro h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.packages-intro p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* التصميم الخاص بالباقات */
+.packages-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    justify-items: center;
+}
+
+.package-item {
+    background-color: #fff;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+}
+
+.package-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.package-item .icon {
+    font-size: 50px;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+.package-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.package-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.package-item .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.package-item .cta-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.package-item .cta-button:hover {
+    background-color: #e67e22;
+}
+
+/* footer */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* التفاعل مع الزر */
+#backToTop {
+    background-color: #464646;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 9px 20px;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+    background-color: #e67e22;
+}
+/* إزالة أي حواف أو مسافات داخلية من العناصر الأساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* التأكد من أن الحواف والمسافات يتم احتسابها ضمن العرض الكلي */
+}
+
+/* الأساسيات */
+body, html {
+    width: 100%;  /* التأكد من أن الصفحة بالكامل لها عرض 100% */
+    height: 100%; /* التأكد من أن الصفحة تغطي ارتفاع الشاشة */
+}
+
+
+/* تنسيق المحتوى */
+main {
+    margin-top: 140px; /* رفع المحتوى أسفل الهيدر */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* تنسيق شريط التنقل */
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 60px; /* المسافة بين الهيدر والشريط */
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between; /* لتوزيع المحتوى بين الروابط والأزرار */
+    align-items: center; /* محاذاة العناصر عموديًا */
+    padding: 10px 20px; /* إضافة padding لتوسيع المسافة الداخلية */
+}
+
+/* قائمة التنقل */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* لتوسيط العناصر داخل الشريط */
+    flex-grow: 1; /* لتوسيع القائمة لتغطية المساحة المتاحة */
+}
+
+/* تنسيق الأزرار (الوضع الليلي وتغيير اللغة) */
+nav .nav-buttons {
+    display: flex; /* صف الأزرار بجانب بعض */
+    align-items: center; /* محاذاة الأزرار عموديًا */
+}
+
+nav .nav-buttons button {
+    background-color: #fcfcfc;
+    color: rgb(6, 6, 6);
+    border: none;
+    padding: 7px 15px;
+    font-size: 7px;
+    border-radius: 5px;
+    margin-left: 10px; /* إضافة مسافة بين الأزرار */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+nav ul li a.active {
+    color: #f39c12;
+}
+/* ✅ تحسين تصميم مربعات الإنجازات */
+.achievements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* ✅ ضبط المربعات */
+.achievement-box {
+    width: 250px; /* توحيد حجم المربعات */
+    height: 180px; /* تجنب اختلاف الأحجام بين اللغات */
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, background 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ✅ ضبط الأيقونات داخل المربعات */
+.achievement-box .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* ✅ ضبط عناوين الإنجازات */
+.achievement-box h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* ✅ ضبط وصف الإنجازات */
+.achievement-box p {
+    font-size: 14px;
+    color: #555;
+    min-height: 40px; /* ✅ توحيد ارتفاع النصوص */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ✅ تحسين الوضع الداكن لمربعات الإنجازات */
+body.dark-mode .achievement-box {
+    background: #222;
+    color: #fff;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ تحسين النصوص في الوضع الداكن */
+body.dark-mode .achievement-box p {
+    color: #ddd;
+}
+
+/* ✅ التأكد من وضوح النصوص بعد الترجمة */
+.achievement-box h3, 
+.achievement-box p {
+    word-wrap: break-word; /* تجنب خروج النصوص عن المربع */
+    text-align: center;
+    max-width: 90%; /* الحد من توسع النصوص المترجمة */
+}
+
+/* ✅ تحسين التأثيرات عند التمرير */
+.achievement-box:hover {
+    transform: scale(1.05);
+    background: #f1f1f1;
+}
+
+body.dark-mode .achievement-box:hover {
+    background: #333;
+}
+
+/* ✅ التأكد من أن النصوص لا تختفي عند الترجمة */
+@media screen and (max-width: 768px) {
+    .achievement-box {
+        width: 90%; /* تجنب ضغط المربعات في الشاشات الصغيرة */
+        height: auto;
+    }
+}
+/* تنسيق زر الرجوع للأعلى */
+#backToTop {
+    position: fixed;
+    bottom: 30px; /* المسافة من الأسفل */
+    right: 30px; /* المسافة من اليمين */
+    background-color: #3d3d3d; /* اللون الأساسي للزر */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: none; /* إخفاء الزر في البداية */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* تأثير التحول */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* ظل الزر */
+    font-family: 'Arial', sans-serif;
+}
+
+#backToTop.show {
+    display: flex; /* إظهار الزر عندما يكون بالوضع المناسب */
+}
+
+/* تأثير الزر عند التمرير */
+#backToTop:hover {
+    background-color: #7d7e80; /* تغيير اللون عند التمرير */
+    transform: translateY(-5px) scale(1.1); /* تحريك الزر للأعلى قليلاً مع تكبيره */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); /* زيادة الظل عند التمرير */
+}
+
+/* تأثير الزر عند التمرير في الوضع المظلم */
+#backToTop.dark-mode {
+    background-color: #333;
+    box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.2);
+}
+
+#backToTop:focus {
+    outline: none;
+}
+
+/* تنسيق الأيقونة داخل الزر */
+#backToTop i {
+    font-size: 35px; /* حجم الأيقونة */
+}
+/* الوضع العادي */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.gallery .image-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery .image-box img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery .image-box p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* الوضع الليلي */
+body.dark-mode {
+    background-color: #121212;
+    color: #e4e4e4;
+}
+
+body.dark-mode .gallery .image-box {
+    background-color: #333;
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .gallery .image-box img {
+    filter: brightness(0.7); /* تقليل السطوع في الوضع الليلي */
+}
+
+body.dark-mode .gallery .image-box p {
+    color: #e4e4e4;
+}
+/* تصميم زر الوضع الداكن */
+.dark-mode-toggle {
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* تأثير التحول */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode-toggle:hover {
+    background-color: #333; /* تغيير الخلفية عند التمرير */
+    color: #fff; /* تغيير اللون عند التمرير */
+    transform: scale(1.1); /* تأثير التكبير عند التمرير */
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: #fff;
+    color: #333;
+    transform: scale(1.1); /* تأثير التكبير عند التمرير في الوضع الليلي */
+}
+/* الوضع الليلي */
+body.dark-mode {
+    background-color: #2c2c2c; /* خلفية داكنة */
+    color: #f0f0f0; /* نص فاتح */
+}
+
+body.dark-mode .achievements {
+    background-color: #444; /* خلفية قسم الإنجازات في الوضع الليلي */
+}
+
+body.dark-mode .achievement-box {
+    background-color: #555; /* خلفية مربعات الإنجازات في الوضع الليلي */
+    border: 1px solid #777; /* إضافة حد خفيف للمربعات */
+    color: #fff; /* التأكد من أن النص داخل المربعات أبيض */
+}
+
+body.dark-mode .achievement-box:hover {
+    background-color: #666; /* خلفية المربع عند التمرير عليه */
+}
+
+body.dark-mode .section-title {
+    color: #f0f0f0; /* جعل عنوان القسم فاتحًا */
+}
+
+body.dark-mode .icon {
+    color: #ffcc00; /* تغيير لون الأيقونات في الوضع الليلي */
+}
+
+/* تحسين النصوص العادية في الوضع الليلي */
+body.dark-mode h2,
+body.dark-mode p {
+    color: #f0f0f0; /* النصوص الرئيسية ستكون فاتحة */
+}
+
+body.dark-mode .achievement-box h3 {
+    color: #fff; /* النص في داخل المربعات سيكون أبيض */
+}
+
+body.dark-mode .achievement-box p {
+    color: #ccc; /* نص الوصف داخل المربعات بلون فاتح */
+}
+/* إعدادات الصفحة الأساسية */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body[data-theme='dark'] {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* التنسيق العام لقسم المقدمة */
+.services-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: #2d2d2d;
+    color: #fff;
+    border-bottom: 5px solid #ffcc00;
+}
+
+.services-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.services-text {
+    width: 50%;
+}
+
+.services-text h2 {
+    font-size: 2.8em;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.services-text .highlight {
+    color: #f4b400;
+}
+
+.services-text p {
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+.services-image img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.services-image img:hover {
+    transform: scale(1.05);
+}
+
+/* تنسيق قسم الخدمات */
+.services-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.service-item {
+    width: 23%;
+    background-color: #f8f8f8;
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.service-item h3 {
+    font-size: 1.8em;
+    color: #2d2d2d;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.service-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-item li {
+    font-size: 1.1em;
+    margin: 8px 0;
+    color: #555;
+}
+
+.service-item li strong {
+    color: #ffcc00;
+}
+
+/* تأثيرات التمرير باستخدام AOS */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* الفوتر */
+footer {
+    background-color: #2d2d2d;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+#backToTop {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #f4b400;
+}
+
+/* تخصيص الوضع الليلي */
+body[data-theme='dark'] .services-intro {
+    background-color: #121212;
+}
+
+body[data-theme='dark'] .services-intro h2,
+body[data-theme='dark'] .services-intro .highlight {
+    color: #ffcc00;
+}
+
+body[data-theme='dark'] .service-item {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body[data-theme='dark'] .service-item h3 {
+    color: #ffcc00;
+}
+
+body[data-theme='dark'] .service-item li {
+    color: #ccc;
+}
+
+body[data-theme='dark'] footer {
+    background-color: #121212;
+}
+
+/* تحسين عرض المربعات في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .services-intro {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .services-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-text {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .services-image {
+        width: 100%;
+    }
+
+    .services-image img {
+        width: 80%;
+        max-width: none;
+    }
+
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+
+:root {
+    --background-light: #ffffff;
+    --text-light: #000000;
+    --background-dark: #121212;
+    --text-dark: #ffffff;
+    --card-light: #f8f9fa;
+    --card-dark: #1e1e1e;
+    --section-light: #ffffff;
+    --section-dark: #181818;
+    --footer-background: #333333; /* لون ثابت لشريط التذييل */
+    --footer-text: #ffffff; /* لون النص داخل التذييل */
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.services-list {
+    background-color: var(--section-light);
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .services-list {
+    background-color: var(--section-dark);
+}
+
+.services-list .service-item {
+    background-color: var(--card-light);
+    color: var(--text-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .services-list .service-item {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
+}
+
+/* تثبيت لون شريط التذييل بدون تأثره بالوضع الليلي */
+footer {
+    background-color: var(--footer-background) !important;
+    color: var(--footer-text) !important;
+    padding: 20px;
+    text-align: center;
+    transition: none;
+}
+
+body.dark-mode footer {
+    background-color: var(--footer-background) !important;
+    color: var(--footer-text) !important;
+}
+/* تأثيرات عند التمرير للمنتجات */
+.product-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.product-item.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-aos="fade-up"] {
+    animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تأثيرات عند التحويم على منتج */
+.product-item {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* تكبير المنتج عند التحويم */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التحويم */
+}
+
+.product-item:hover .icon {
+    transform: rotate(360deg); /* تدوير الأيقونة عند التحويم */
+    transition: transform 0.5s ease;
+}
+
+/* تأثيرات النصوص فوق الصور */
+.showcase-box {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.showcase-box:hover {
+    transform: scale(1.05); /* تكبير الصورة */
+}
+
+.showcase-box .image-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.showcase-box:hover .image-caption {
+    opacity: 1; /* إظهار النص */
+}
+
+/* تأثيرات التمرير */
+.scroll-effect {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* شاشة تحميل أنيميشن ممتعة */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #1abc9c;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* إضافة تأثيرات "Hover" على الأزرار */
+button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #16a085;
+    transform: scale(1.05); /* تكبير الزر عند التحويم */
+}
+
+/* تأثيرات إضاءة عند التحويم على منتج */
+.product-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-item:hover::before {
+    opacity: 1;
+}
+
+/* أزرار تفاعلية لإضافة إلى السلة وشراء الآن */
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart, .buy-now {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background-color: #1abc9c;
+    color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.add-to-cart:hover, .buy-now:hover {
+    transform: scale(1.1); /* تكبير الزر عند التحويم */
+}
+/* تأثير النص العلوي */
+.intro-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثير النص عند التمرير */
+.intro-description {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro-description.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثيرات خاصة بمربعات الصور */
+.showcase-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.showcase-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.showcase-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.showcase-box:hover .image-caption {
+    opacity: 1;
+}
+
+/* أضف تأثير التمرير لجعل العناصر تظهر تدريجياً */
+.scroll-effect {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تفاعل الأزرار عند التحويم */
+button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #16a085;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* تأثيرات حركة النص العلوي */
+.intro-title {
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* إضافة تأثير التلاشي عند التمرير */
+.intro-description {
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* تأثيرات تفاعلية عند التحويم على مربعات الصور */
+.showcase-box:hover {
+    transform: scale(1.05);  /* تكبير الصور */
+    box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.2); /* إضافة ظل عند التحويم */
+    cursor: pointer; /* تغيير المؤشر إلى يد عند التحويم */
+}
+/* تأثير التلاشي والدخول للنص */
+.intro-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثير التلاشي لدخول النص */
+.intro-description {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro-description.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثير تكبير النص عند التحويم */
+.intro-title:hover, .intro-description:hover {
+    transform: scale(1.1);  /* تكبير النص عند التحويم */
+    color: #1abc9c;          /* تغيير اللون عند التحويم */
+    cursor: pointer;        /* تغيير المؤشر إلى يد عند التحويم */
+    transition: transform 0.3s ease, color 0.3s ease; /* إضافة انتقال سلس */
+}
+
+/* إضافة تأثير التمرير لجعل العناصر تظهر تدريجياً */
+.scroll-effect {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تأثيرات حركة النص العلوي */
+.intro-title {
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* إضافة تأثير التلاشي عند التمرير */
+.intro-description {
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* إضافة التأثيرات الخاصة */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.products-intro {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.products-intro:hover {
+    transform: translateY(-10px);  /* تأثير رفع بسيط عند التمرير */
+    opacity: 0.9;  /* تأثير تلاشي بسيط */
+}
+
+.highlight {
+    color: #1abc9c;
+}
+
+.product-item {
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* تكبير المنتج عند التحويم */
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-item h3 {
+    color: #333;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.product-item:hover h3 {
+    color: #1abc9c;  /* تغيير اللون عند التحويم */
+}
+
+.products-showcase .showcase-box {
+    position: relative;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.showcase-box:hover {
+    transform: scale(1.1); /* تكبير الصورة عند التمرير */
+}
+
+.showcase-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.showcase-box:hover .image-caption {
+    opacity: 1;  /* ظهور النص فوق الصورة عند التحويم */
+}
+/* الوضع الليلي */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .products-intro {
+    background-color: #444;
+}
+
+body.dark-mode .product-item {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .product-item h3 {
+    color: #fff;
+}
+
+body.dark-mode .image-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode footer {
+    background-color: #222;
+    color: #fff;
+}
+
+body.dark-mode footer a {
+    color: #fff;
+}
+
+body.dark-mode .navbar {
+    background-color: #222;
+}
+
+body.dark-mode .navbar a {
+    color: #fff;
+}
+
+/* تغيير لون الزر */
+body.dark-mode #toggleDarkMode {
+    background-color: #fff;
+    color: #333;
+}
+/* الوضع الليلي */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode .products-intro {
+    background-color: #444;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode .product-item {
+    background-color: #555;
+    color: #fff;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+}
+
+body.dark-mode .product-item h3 {
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+body.dark-mode .image-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.5s ease;
+}
+
+body.dark-mode .image-caption:hover {
+    opacity: 0.9;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+    color: #fff;
+    transition: background-color 0.5s ease;
+}
+
+body.dark-mode footer a {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+body.dark-mode .navbar {
+    background-color: #222;
+}
+
+body.dark-mode .navbar a {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+body.dark-mode #toggleDarkMode {
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-mode #toggleDarkMode:hover {
+    background-color: #444;
+    transform: scale(1.1);
+}
+
+/* تأثيرات التحول عند التمرير */
+body.dark-mode .product-item:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+body.dark-mode .showcase-box img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+body.dark-mode .showcase-box img:hover {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+
+body.dark-mode .highlight {
+    text-shadow: 0 0 8px #fff, 0 0 12px #fff;
+}
+.image-gallery {
+    position: relative;
+    width: 90%;
+    height: 500px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: #111;
+}
+
+/* ✅ تكبير الصور لتناسب الحجم الجديد */
+.image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* ✅ تحسين الأسهم */
+.prev, .next {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    font-size: 40px;
+    border-radius: 50%;
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.2);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* ✅ تحسين النصوص */
+.image-text {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 22px;
+    max-width: 80%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.image-slide:hover .image-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tips-list {
+    list-style: none;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 20px;
+    color: #fff;
+    padding: 15px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInRight 0.8s forwards;
+}
+
+.tip-item:last-child {
+    border-bottom: none;
+}
+
+.tip-item .icon {
+    font-size: 30px;
+    color: #ffcc00;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tip-item:hover .icon {
+    transform: rotate(10deg) scale(1.2);
+}
+
+.tip-item span {
+    font-weight: bold;
+    color: #ffcc00;
+    font-size: 22px;
+}
+
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+/* تعيين ألوان متغيرة حسب الوضع الفاتح والمظلم */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --icon-color: #ffcc00;
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #ffffff;
+        --icon-color: #ffcc00;
+        --border-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* تصميم النصائح */
+.tips-list {
+    list-style: none;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    background-color: var(--bg-color);
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 20px;
+    color: var(--text-color);
+    padding: 15px 0;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInRight 0.8s forwards;
+}
+
+.tip-item:last-child {
+    border-bottom: none;
+}
+
+.tip-item .icon {
+    font-size: 30px;
+    color: var(--icon-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tip-item:hover .icon {
+    transform: rotate(10deg) scale(1.2);
+}
+
+.tip-item span {
+    font-weight: bold;
+    color: var(--icon-color);
+    font-size: 22px;
+}
+
+@keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+.tips-intro h2 {
+    font-size: 2.5rem; /* تكبير الخط */
+    color: #004aad; /* لون احترافي يتماشى مع الفخامة */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+    font-weight: bold; /* جعل الخط أكثر وضوحًا */
+    text-align: center; /* توسيط العنوان */
+}
+.image-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6); /* لون خلفية شفاف */
+    color: #fff; /* نص أبيض ليتناسب مع الخلفية */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 80%;
+}
+/* تصميم النوافذ المنبثقة */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    width: 70%;
+    max-width: 500px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease;
+}
+
+.popup-content h3 {
+    font-size: 1.5rem;
+    color: #004aad;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.close {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.close:hover {
+    background-color: #cc0000;
+}
+
+/* تأثيرات الظهور */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* تصميم أزرار النصائح */
+.tip-button {
+    background: #004aad;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.tip-button .icon {
+    margin-right: 10px;
+}
+
+.tip-button:hover {
+    background-color: #003480;
+}
+/* النصائح العامة */
+.tips-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.tip-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: right;
+}
+
+.tip-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tip-item .icon {
+    font-size: 2.5em;
+    color: #4CAF50;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.tip-item h3 {
+    font-size: 1.4em;
+    color: #333333;
+    margin-top: 20px;
+}
+
+.tip-item p {
+    font-size: 1em;
+    color: #555555;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* التأثيرات عند التمرير */
+.tip-item:hover h3 {
+    color: #4CAF50;
+}
+
+.tip-item:hover p {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* تلميح رقم 1 */
+.tip-item:nth-child(1) {
+    border-left: 5px solid #4CAF50;
+}
+
+/* تلميح رقم 2 */
+.tip-item:nth-child(2) {
+    border-left: 5px solid #FF9800;
+}
+
+/* تلميح رقم 3 */
+.tip-item:nth-child(3) {
+    border-left: 5px solid #2196F3;
+}
+
+/* تلميح رقم 4 */
+.tip-item:nth-child(4) {
+    border-left: 5px solid #9C27B0;
+}
+
+/* تلميح رقم 5 */
+.tip-item:nth-child(5) {
+    border-left: 5px solid #FFC107;
+}
+
+/* تلميح رقم 6 */
+.tip-item:nth-child(6) {
+    border-left: 5px solid #00BCD4;
+}
+
+/* تلميح رقم 7 */
+.tip-item:nth-child(7) {
+    border-left: 5px solid #E91E63;
+}
+
+/* تلميح رقم 8 */
+.tip-item:nth-child(8) {
+    border-left: 5px solid #673AB7;
+}
+/* النصائح العامة */
+.tips-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.tip-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px 20px 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tip-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tip-item .icon {
+    font-size: 3em; /* زيادة حجم الأيقونة */
+    color: #4CAF50;
+    position: absolute;
+    top: -15px; /* جعل الأيقونة في الجزء العلوي */
+    left: 20px; /* وضع الأيقونة على اليسار */
+    z-index: 1;
+}
+
+.tip-item h3 {
+    font-size: 1.4em;
+    color: #333333;
+    margin-top: 10px;
+}
+
+.tip-item p {
+    font-size: 1em;
+    color: #555555;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* التأثيرات عند التمرير */
+.tip-item:hover h3 {
+    color: #4CAF50;
+}
+
+.tip-item:hover p {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* تلميح رقم 1 */
+.tip-item:nth-child(1) {
+    border-left: 5px solid #4CAF50;
+}
+
+/* تلميح رقم 2 */
+.tip-item:nth-child(2) {
+    border-left: 5px solid #FF9800;
+}
+
+/* تلميح رقم 3 */
+.tip-item:nth-child(3) {
+    border-left: 5px solid #2196F3;
+}
+
+/* تلميح رقم 4 */
+.tip-item:nth-child(4) {
+    border-left: 5px solid #9C27B0;
+}
+
+/* تلميح رقم 5 */
+.tip-item:nth-child(5) {
+    border-left: 5px solid #FFC107;
+}
+
+/* تلميح رقم 6 */
+.tip-item:nth-child(6) {
+    border-left: 5px solid #00BCD4;
+}
+
+/* تلميح رقم 7 */
+.tip-item:nth-child(7) {
+    border-left: 5px solid #E91E63;
+}
+
+/* تلميح رقم 8 */
+.tip-item:nth-child(8) {
+    border-left: 5px solid #673AB7;
+}
+/* الوضع الداكن */
+body.dark-mode {
+    background-color: #121212; /* خلفية داكنة */
+    color: #ffffff; /* لون النص أبيض */
+}
+
+/* خلفية مربعات النصائح فقط في الوضع الداكن */
+body.dark-mode .tip-item {
+    background-color: #333333; /* خلفية داكنة لمربع النصيحة */
+    color: #ffffff; /* نص أبيض في الوضع الداكن */
+    border: 1px solid #444444; /* حدود مظلمة حول النصائح */
+}
+
+/* تغير لون الأيقونات في الوضع الداكن */
+body.dark-mode .tip-item .icon {
+    color: #FFC107; /* أيقونة ذهبية */
+}
+
+/* التأثيرات عند التمرير على مربعات النصائح في الوضع الداكن */
+body.dark-mode .tip-item:hover {
+    background-color: #444444; /* خلفية داكنة أثناء التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .tip-item:hover h3 {
+    color: #FF9800; /* تغيير لون العنوان أثناء التمرير */
+}
+
+body.dark-mode .tip-item:hover p {
+    color: #ffffff; /* تغيير النص إلى أبيض أثناء التمرير */
+}
+
+/* في الوضع العادي (الفاتح) الخلفية تبقى بيضاء */
+.tip-item {
+    background-color: #ffffff; /* خلفية بيضاء لمربعات النصائح */
+    color: #000000; /* نص أسود في الوضع العادي */
+    border: 1px solid #cccccc; /* حدود خفيفة حول النصائح */
+}
+
+/* التأثيرات عند التمرير في الوضع العادي */
+.tip-item:hover {
+    background-color: #f0f0f0; /* خلفية فاتحة عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tip-item:hover h3 {
+    color: #FF9800; /* تغيير لون العنوان في الوضع الفاتح */
+}
+
+.tip-item:hover p {
+    color: #333333; /* تغيير لون النص في الوضع الفاتح */
+}
+/* الوضع الداكن */
+body.dark-mode {
+    background-color: #121212; /* خلفية داكنة */
+    color: #ffffff; /* لون النص أبيض */
+}
+
+/* خلفية مربعات النصائح فقط في الوضع الداكن */
+body.dark-mode .tip-item {
+    background-color: #333333; /* خلفية داكنة لمربع النصيحة */
+    color: #ffffff; /* نص أبيض في الوضع الداكن */
+    border: 1px solid #444444; /* حدود مظلمة حول النصائح */
+}
+
+/* تغير لون الأيقونات في الوضع الداكن */
+body.dark-mode .tip-item .icon {
+    color: #FFC107; /* أيقونة ذهبية */
+}
+
+/* التأثيرات عند التمرير على مربعات النصائح في الوضع الداكن */
+body.dark-mode .tip-item:hover {
+    background-color: #444444; /* خلفية داكنة أثناء التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .tip-item:hover h3 {
+    color: #FF9800; /* تغيير لون العنوان أثناء التمرير */
+}
+
+body.dark-mode .tip-item:hover p {
+    color: #ffffff; /* تغيير النص إلى أبيض أثناء التمرير */
+}
+
+/* في الوضع العادي (الفاتح) الخلفية تبقى بيضاء */
+.tip-item {
+    background-color: #ffffff; /* خلفية بيضاء لمربعات النصائح */
+    color: #000000; /* نص أسود في الوضع العادي */
+    border: 1px solid #cccccc; /* حدود خفيفة حول النصائح */
+}
+
+/* التأثيرات عند التمرير في الوضع العادي */
+.tip-item:hover {
+    background-color: #f0f0f0; /* خلفية فاتحة عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tip-item:hover h3 {
+    color: #FF9800; /* تغيير لون العنوان في الوضع الفاتح */
+}
+
+.tip-item:hover p {
+    color: #333333; /* تغيير لون النص في الوضع الفاتح */
+}
+/* الوضع الداكن (dark mode) */
+body.dark-mode {
+    background-color: #121212; /* خلفية داكنة للصفحة */
+    color: #ffffff; /* النصوص باللون الأبيض في الوضع الداكن */
+}
+
+/* تطبيق الوضع الداكن على جميع العناصر داخل الـ main (النصائح) */
+body.dark-mode .tips-intro,
+body.dark-mode .image-gallery,
+body.dark-mode .tips-list {
+    background-color: #121212; /* خلفية داكنة للمحتوى الرئيسي */
+    color: #ffffff; /* نص أبيض في النصائح */
+}
+
+/* تغيير خلفية مربعات النصائح في الوضع الداكن */
+body.dark-mode .tip-item {
+    background-color: #333333; /* خلفية داكنة لمربعات النصائح */
+    color: #ffffff; /* نص أبيض داخل مربعات النصائح */
+    border: 1px solid #444444; /* حدود داكنة حول مربعات النصائح */
+}
+
+/* تغيير الأيقونات داخل مربعات النصائح في الوضع الداكن */
+body.dark-mode .tip-item .icon {
+    color: #FFC107; /* أيقونة ذهبية */
+}
+
+/* التأثيرات عند التمرير على مربعات النصائح في الوضع الداكن */
+body.dark-mode .tip-item:hover {
+    background-color: #444444; /* خلفية داكنة أثناء التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* ظل داكن */
+}
+
+body.dark-mode .tip-item:hover h3 {
+    color: #FF9800; /* تغيير لون العنوان أثناء التمرير */
+}
+
+body.dark-mode .tip-item:hover p {
+    color: #ffffff; /* تغيير النص إلى أبيض أثناء التمرير */
+}
+
+/* في الوضع العادي (الفاتح) */
+.tip-item {
+    background-color: #ffffff; /* خلفية بيضاء لمربعات النصائح */
+    color: #000000; /* نص أسود في الوضع العادي */
+    border: 1px solid #cccccc; /* حدود خفيفة حول مربعات النصائح */
+}
+
+/* التأثيرات عند التمرير في الوضع العادي */
+.tip-item:hover {
+    background-color: #f0f0f0; /* خلفية فاتحة عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+.tip-item:hover h3 {
+    color: #FF9800; /* تغيير لون العنوان في الوضع الفاتح */
+}
+
+.tip-item:hover p {
+    color: #333333; /* تغيير لون النص في الوضع الفاتح */
+}
+
+/* التأثيرات العامة للنصائح */
+.tips-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-top: 20px;
+}
+/* إضافة مسافة بين الإيموجي والنص */
+.tip-item .icon {
+    margin-right: 10px; /* إضافة مسافة إلى اليمين من الإيموجي */
+    font-size: 24px; /* يمكنك تعديل الحجم إذا أردت */
+}
+/* تنسيق الحاوية العامة */
+.packages-container {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* تنسيق الأزرار */
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* تنسيق المحتوى */
+.tab-content .tab-item {
+    display: none;
+    text-align: center;
+}
+
+.tab-content .tab-item.active {
+    display: block;
+}
+
+.icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+}
+/* تنسيق النص العوي */
+.packages-intro {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1000px;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* تحسين النص العوي */
+.packages-intro h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: slideUp 1.5s forwards;
+    animation-delay: 0.5s;
+    text-transform: capitalize;
+}
+
+/* تحسين النص الوصفي في العوي */
+.packages-intro p {
+    font-size: 20px;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    animation: slideUp 1.5s forwards;
+    animation-delay: 1s;
+}
+
+/* تأثيرات الأنيميشين */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* تنسيق الحاوية (Carousel Container) */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+/* تنسيق العناصر داخل الـ Carousel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+/* تنسيق كل باقة داخل الـ Carousel */
+.carousel-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s ease forwards;
+}
+
+/* تحسين الرموز */
+.carousel-item .icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* تأثيرات الأنيميشين عند الظهور */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* تأثيرات حركة العناصر عند ظهورها */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* أزرار التمرير */
+.prev-btn, .next-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: #f39c12;
+}
+/* لتوسيط النص */
+.contact-intro h2 {
+    text-align: center; /* توسيط النص */
+    font-size: 2.5rem; /* حجم الخط */
+    color: #333; /* لون النص */
+    text-transform: uppercase; /* تحويل النص إلى حروف كبيرة */
+    letter-spacing: 2px; /* تباعد بين الحروف */
+    margin-bottom: 20px; /* إضافة مسافة أسفل النص */
+    position: relative;
+}
+
+/* تأثيرات النص */
+.contact-intro h2::after {
+    content: ''; /* إضافة محتوى فارغ */
+    position: absolute;
+    width: 50px; /* عرض الخط السفلي */
+    height: 3px; /* سمك الخط */
+    background-color: #f0a500; /* لون الخط */
+    bottom: -10px; /* المسافة من الأسفل */
+    left: 50%; /* توسيط الخط */
+    transform: translateX(-50%); /* محاذاة الخط بشكل دقيق */
+    animation: slide 1s ease-out; /* إضافة تأثير التحرك */
+}
+
+/* تأثير التحرك للنص */
+@keyframes slide {
+    0% {
+        transform: translateX(-50%) scaleX(0);
+    }
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+
+/* إضافة تأثيرات النص عند المرور */
+.contact-intro h2:hover {
+    color: #f0a500; /* تغيير اللون عند المرور */
+    text-shadow: 0 0 10px rgba(240, 165, 0, 0.5); /* إضافة تأثير الظل */
+}
+/* تحسين أيقونات الوسائط الاجتماعية */
+.social-links a {
+    display: inline-block;
+    margin: 0 10px; /* إضافة مسافة بين الأيقونات */
+    font-size: 2rem; /* حجم الأيقونات */
+    color: #333; /* لون الأيقونات */
+    transition: all 0.3s ease; /* تأثير سلس على الأيقونات */
+}
+
+.social-links a:hover {
+    color: #f0a500; /* تغيير اللون عند المرور */
+    transform: scale(1.2); /* تكبير الأيقونة قليلاً */
+    text-shadow: 0 0 10px rgba(240, 165, 0, 0.5); /* إضافة تأثير الظل */
+}
+
+/* تحسين أيقونات السوشيال ميديا في التذييل */
+footer .social-media a {
+    margin: 0 10px; /* مسافة بين الأيقونات */
+    font-size: 1.5rem; /* حجم الأيقونات */
+    color: #333; /* لون الأيقونات */
+    transition: all 0.3s ease; /* تأثير سلس على الأيقونات */
+}
+
+footer .social-media a:hover {
+    color: #f0a500; /* تغيير اللون عند المرور */
+    transform: scale(1.2); /* تكبير الأيقونة */
+    text-shadow: 0 0 10px rgba(240, 165, 0, 0.5); /* إضافة تأثير الظل */
+}
+
+/* تحسين النصوص في الفوتر */
+footer h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+footer h3:hover {
+    color: #f0a500; /* تغيير اللون عند المرور */
+}
+
+/* تحسين الروابط */
+footer a {
+    color: #0077cc; /* لون الرابط */
+    text-decoration: none; /* إزالة خط تحت الرابط */
+    transition: all 0.3s ease; /* تأثير سلس على الرابط */
+}
+
+footer a:hover {
+    color: #f0a500; /* تغيير اللون عند المرور */
+    text-decoration: underline; /* إضافة خط تحت الرابط عند المرور */
+}
+
+/* تحسين النصوص في الفقرات */
+footer p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: #f0a500; /* تغيير اللون عند المرور */
+}
+
+/* تأثيرات على النصوص العناوين */
+.contact-intro h2, .contact-info h3 {
+    text-align: center; /* توسيط النص */
+    font-size: 2rem; /* حجم الخط */
+    color: #333; /* لون النص */
+    text-transform: uppercase; /* تحويل النص إلى حروف كبيرة */
+    letter-spacing: 1px; /* تباعد بين الحروف */
+    margin-bottom: 20px; /* إضافة مسافة أسفل النص */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* تأثيرات على النصوص العناوين عند التمرير */
+.contact-intro h2:hover, .contact-info h3:hover {
+    color: #f0a500; /* تغيير اللون عند المرور */
+    text-shadow: 0 0 10px rgba(240, 165, 0, 0.7); /* إضافة تأثير الظل */
+}
+/* تحسين شامل لتصميم صفحة إمكانية الوصول */
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.access-intro, .feedback {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #006994, #00c3ff);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.access-intro:hover, .feedback:hover {
+    transform: scale(1.05);
+}
+
+.access-features {
+    display: grid;
+    gap: 25px;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.dark-mode .feature-item {
+    background: rgba(34, 34, 34, 0.9);
+    color: #ddd;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0077b6;
+}
+
+.dark-mode .feature-header {
+    color: #00c3ff;
+}
+
+.details-btn {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.details-btn:hover {
+    background: #00a8cc;
+    transform: scale(1.1);
+}
+
+.feature-details {
+    display: none;
+    padding-top: 12px;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+}
+
+.dark-mode .feature-details {
+    color: #bbb;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #222;
+    color: white;
+    margin-top: 50px;
+    border-radius: 15px 15px 0 0;
+}
+
+footer a {
+    color: #00a8cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+footer a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}/* تنسيق شريط التنقل */
+nav {
+    display: flex; /* استخدام Flexbox لجعل العناصر داخل شريط التنقل في صف واحد */
+    justify-content: flex-start; /* محاذاة العناصر إلى الجهة اليسرى */
+    align-items: center; /* محاذاة العناصر عموديًا في الوسط */
+    background-color: #333; /* تغيير لون خلفية شريط التنقل (اختياري) */
+    padding: 10px; /* المسافة بين العناصر داخل شريط التنقل */
+}
+
+/* تنسيق الزر */
+#toggleDarkMode {
+    background-color: #fff; /* لون خلفية الزر */
+    color: #333; /* لون النص داخل الزر */
+    border: 1px solid #ccc; /* إضافة حدود للزر */
+    padding: 8px 16px; /* المسافة داخل الزر */
+    font-size: 16px; /* حجم الخط */
+    cursor: pointer; /* تغيير شكل المؤشر عندما يمر فوق الزر */
+    margin-right: 20px; /* إضافة مسافة بين الزر والعناصر الأخرى (اختياري) */
+}
+/* إضافة تأثير قوس قزح للمربعات */
+.feature-item {
+    position: relative;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.feature-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* جعل الشريط أصغر */
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* تأثير قوس قزح */
+    border-radius: 0 0 8px 8px; /* تحديد زوايا الشريط */
+}
+/* التأكد من أن الزر في وضع ثابت */
+#backToTop {
+    position: fixed;
+    bottom: 20px; /* من الأسفل */
+    left: 20px; /* من اليسار */
+    background-color: #7f00b7; /* اللون البنفسجي */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1000; /* تأكد من أنه يظهر فوق باقي المحتوى */
+    display: none; /* مخفي بشكل افتراضي */
+    opacity: 0.8; /* شفافية صغيرة */
+}
+
+/* عند التمرير لأسفل يظهر الزر */
+#backToTop.show {
+    display: block;
+}
+
+/* عند التمرير على الزر، تغيير اللون */
+#backToTop:hover {
+    background-color: #5e00a1;
+    opacity: 1; /* زيادة الشفافية عند التمرير */
+}
+/* التأكد من أن الزر في وضع ثابت فوق باقي العناصر */
+#backToTop {
+    position: fixed;
+    bottom: 20px;  /* من الأسفل */
+    left: 20px;    /* من اليسار */
+    background-color: #7f00b7;  /* اللون البنفسجي */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: none; /* مخفي بشكل افتراضي */
+    opacity: 0.8;   /* شفافية صغيرة */
+    z-index: 99999 !important; /* استخدام قيمة عالية لـ z-index */
+}
+
+/* عند التمرير لأسفل يظهر الزر */
+#backToTop.show {
+    display: block !important;
+}
+
+/* عند التمرير على الزر، تغيير اللون */
+#backToTop:hover {
+    background-color: #5e00a1;
+    opacity: 1; /* زيادة الشفافية عند التمرير */
+}
+#backToTop {
+    position: absolute; /* تحديد الموقع بشكل مطلق */
+    bottom: 10px; /* المسافة من أسفل الفوتر */
+    left: 50%; /* تحديد مركز الزر */
+    transform: translateX(-50%); /* محاذاة الزر بشكل دقيق في المنتصف */
+    background-color: #7f00b7; /* اللون البنفسجي */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%; /* شكل دائري */
+    font-size: 18px;
+    cursor: pointer;
+    display: none; /* الزر مخفي بشكل افتراضي */
+    opacity: 0.8; /* الشفافية */
+    z-index: 9999; /* طبقة عالية لضمان ظهور الزر فوق العناصر الأخرى */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row-reverse; /* عكس ترتيب العناصر من اليمين لليسار */
+    padding: 0;
+}
+
+
+.nav-buttons {
+    margin-left: auto; /* وضع الزر في الجهة اليسرى */
+}
+/* تنسيق مساحة الشعار في الأعلى */
+.top-space {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.top-space img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* تنسيق المعلومات الخاصة بالاتصال */
+.contact-info {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* تنسيق مربعات النموذج (الإرسال) */
+.contact-form {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* تحسين التأثيرات على مربعات الشكاوى والاقتراحات */
+.feedback {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.feedback h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feedback .form-group {
+    margin-bottom: 15px;
+}
+
+.feedback label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.feedback textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.feedback .submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback .submit-btn:hover {
+    background-color: #218838;
+}
+
+/* تأثيرات الزر العائم في التذييل */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+/* تنسيق مساحة الشعار في الأعلى */
+.top-space {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.top-space img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* تنسيق المعلومات الخاصة بالاتصال */
+.contact-info {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* تنسيق مربعات النموذج (الإرسال) */
+.contact-form {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* تحسين التأثيرات على مربعات الشكاوى والاقتراحات */
+.feedback {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    transition: background-color 0.3s ease;
+}
+
+.feedback h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feedback .form-group {
+    margin-bottom: 15px;
+}
+
+.feedback label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.feedback textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.feedback .submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback .submit-btn:hover {
+    background-color: #218838;
+}
+
+/* تأثيرات الزر العائم في التذييل */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
+/* الوضع الليلي */
+body[data-page="contact"].dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body[data-page="contact"].dark-mode .contact-info,
+body[data-page="contact"].dark-mode .contact-form,
+body[data-page="contact"].dark-mode .feedback {
+    background-color: #444;
+    color: white;
+}
+
+body[data-page="contact"].dark-mode .contact-info h3,
+body[data-page="contact"].dark-mode .contact-form h3,
+body[data-page="contact"].dark-mode .feedback h3 {
+    color: #ffffff;
+}
+
+body[data-page="contact"].dark-mode .contact-info p,
+body[data-page="contact"].dark-mode .contact-form p,
+body[data-page="contact"].dark-mode .feedback p {
+    color: #dcdcdc;
+}
+
+body[data-page="contact"].dark-mode .submit-btn {
+    background-color: #0056b3;
+}
+
+body[data-page="contact"].dark-mode .submit-btn:hover {
+    background-color: #003c73;
+}
+
+/* الهيدر العلوي */
+.top-space {
+    margin: 0;                    /* إزالة المسافة العلوية */
+    padding: 0;                   /* إزالة الحشو */
+    display: flex;                /* استخدام flexbox للمحاذاة */
+    justify-content: center;      /* لمحاذاة الشعار في المنتصف أفقياً */
+    align-items: center;          /* لمحاذاة الشعار في المنتصف عمودياً */
+    height: 60px;                 /* تحديد ارتفاع الحاوية للشعار */
+    width: 100%;                  /* جعل عرض الحاوية يغطي العرض الكامل */
+    overflow: hidden;             /* لمنع الشعار من الخروج من الحاوية */
+    background: #D3E671;          /* اللون الأخضر الفاتح في الوضع النهاري */
+    animation: gradientAnimation 5s ease infinite; /* حركة التدرج اللوني */
+}
+
+/* التغيير في الوضع اليلي */
+body.dark-mode .top-space {
+    background-color: #222; /* تغيير الخلفية إلى لون داكن عند تفعيل الوضع الليلي */
+}
+
+/* الشعار في الوضعين */
+.top-space img {
+    width: 100%;                  /* الشعار سيغطي العرض بالكامل */
+    height: 100%;                 /* الشعار سيغطي الارتفاع بالكامل */
+    object-fit: cover;            /* تأكد من أن الشعار يغطي المساحة دون أن يتشوه */
+    filter: none; /* لا توجد تأثيرات على الصورة نفسها */
+}
+
+/* تأثيرات عند التمرير على الصورة */
+.top-space img::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #ff6f61; /* اللون الذي تريده */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.top-space img:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* تأثيرات الحركة والتدرج في الوضع النهاري */
+@keyframes gradientAnimation {
+    0% { background: #D3E671; }
+    50% { background: #A8C84A; } /* تدرج اللون إلى درجة أغمق قليلاً */
+    100% { background: #D3E671; }
+}
+
+/* تأثيرات الفيد إن */
+.top-space img {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* تأثيرات الزخرفة عند التمرير */
+.top-space img:hover {
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* تأثيرات الصورة في الوضع اليلي */
+.top-space img {
+    transition: filter 0.3s ease;
+}
+
+.top-space img:hover {
+    filter: brightness(1.2); /* زيادة الإضاءة عند التمرير */
+}
+
+.top-space img {
+    transition: filter 0.4s ease;
+}
+
+.top-space img:hover {
+    filter: hue-rotate(90deg); /* تغيير الألوان عند التمرير */
+}
+
+/* تأثيرات الظل للنصوص */
+.top-space img {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* إضافة ظل للنص */
+    transition: text-shadow 0.4s ease;
+}
+
+.top-space img:hover {
+    text-shadow: 0 0 20px rgba(0, 255, 0, 1); /* تأثير ظل لامع عند التمرير */
+}
+
+/* تأثيرات الشفافية والإضاءة */
+.top-space img {
+    position: relative;
+}
+
+.top-space img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.top-space img:hover::after {
+    opacity: 1; /* ظهور التأثير بشكل تدريجي */
+}
+body.dark-mode .top-space {
+    background-color: #444 !important; /* إضافة !important لضمان تطبيق القاعدة */
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.top-space img {
+    transition: filter 0.3s ease;
+}
+
+.top-space img:hover {
+    filter: brightness(1.2); /* زيادة الإضاءة عند التمرير */
+}
+.top-space img {
+    transition: filter 0.4s ease;
+}
+
+.top-space img:hover {
+    filter: hue-rotate(90deg); /* تغيير الألوان عند التمرير */
+}
+.top-space img {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* إضافة ظل للنص */
+    transition: text-shadow 0.4s ease;
+}
+
+.top-space img:hover {
+    text-shadow: 0 0 20px rgba(0, 255, 0, 1); /* تأثير ظل لامع عند التمرير */
+}
+.top-space img {
+    position: relative;
+}
+
+.top-space img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.top-space img:hover::after {
+    opacity: 1; /* ظهور التأثير بشكل تدريجي */
+}
+/* تعيين صورة الخلفية للصفحة بأكملها */
+html, body {
+    height: 100%; /* تأكد من أن الصفحة تغطي كامل الشاشة */
+    margin: 0; /* إزالة الهامش الافتراضي */
+    padding: 0; /* إزالة الحشو الافتراضي */
+}
+
+.home-page {
+    background-image: url("images/خلفية.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+/* تأثير الظهور التدريجي */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* تأثير تمهيدي على الشعار عند تحميل الصفحة */
+.logo {
+    opacity: 0; /* جعل الشعار غير مرئي عند البداية */
+    animation: fadeInLogo 1s forwards;
+}
+
+@keyframes fadeInLogo {
+    to {
+        opacity: 1;
+    }
+}
+footer .footer-logo img {
+    width: 150px; /* قم بتحديد الحجم الذي تريده */
+    height: auto; /* الحفاظ على النسبة بين العرض والارتفاع */
+}
+/*  من نحن تعيين صورة خلفية للصفحة */
+body.page-about {
+    background-image: url("images/pg"); /* ضع مسار الصورة هنا */
+    background-size: cover; /* لتغطية كامل الصفحة */
+    background-position: center; /* لتوسيط الصورة */
+    background-attachment: fixed; /* لتثبيت الصورة أثناء التمرير */
+    color: white; /* تغيير لون النص ليكون مناسباً مع الخلفية */
+}
+/* تعيين صورة خلفية لصفحة الخدمات */
+.page-services {
+    background-image: url('images/صور4.jpg'); /* استبدل بمسار الصورة الصحيح */
+    background-size: cover; /* لجعل الصورة تغطي الخلفية بالكامل */
+    background-position: center; /* لوضع الصورة في المنتصف */
+    background-attachment: fixed; /* لجعل الصورة ثابتة أثناء التمرير */
+    color: white; /* لجعل النص واضحاً */
+}
+.products-page {
+    background: linear-gradient(to bottom, #fdfbfb, #e2e2e2);
+}
+.products-page {
+    background-color: #f5f7fa; /* لون أزرق فاتح جدًا */
+}
+.products-page {
+    background: linear-gradient(to bottom right, #e2e8f0, #d1dbe1); /* تدرج من لون أزرق فاتح إلى لون رمادي ناعم */
+}
+.products-page {
+    background: linear-gradient(to right, #f9c5d1, #b4d8e7); /* تدرج بين الوردي الفاتح والأزرق الباهت */
+}
+/* التأكد من أن الشعار يظهر بحجم صغير في البداية */
+img {
+    width: 50px; /* الشعار يظهر صغيرًا في البداية */
+    height: auto;
+    transition: width 0.3s ease-in-out; /* انتقال سلس عند تغيير الحجم */
+}
+
+/* بعد تحميل الصفحة أو عند تفعيل الشعار بالطريقة الطبيعية */
+body.loaded img {
+    width: 150px; /* حجم الشعار النهائي */
+}
+.image-slide {
+    display: none;
+}
+.image-slide:first-child {
+    display: block;
+}
+.image-slide {
+    display: none; /* إخفاء جميع الصور افتراضيًا */
+    text-align: center;
+}
+
+.image-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* عرض الصورة الأولى فقط عند التحميل */
+.image-slide:first-child {
+    display: block;
+}
+
+/* أزرار التنقل */
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.prev:hover, .next:hover {
+    background-color: #555;
+}
+.image-slide {
+    display: none; /* إخفاء جميع الصور افتراضيًا */
+    text-align: center;
+}
+
+.image-slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* أزرار التحكم */
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.prev:hover, .next:hover {
+    background-color: #555;
+}
+/* إزالة تنسيقات شريط التنقل */
+nav {
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+/* تنسيق الساعة */
+#clock {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: rgba(255, 255, 255, 0.7); /* خلفية شفافة */
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 9999; /* التأكد من بقاء الساعة في أعلى العناصر الأخرى */
+}
+/*  من نحن تعيين صورة خلفية للصفحة */
+body.page-about {
+    background-image: url("images/—Pngtree—golf\ an\ 18hole\ course\ with_15430796.jpg"); /* ضع مسار الصورة هنا */
+    background-size: cover; /* لتغطية كامل الصفحة */
+    background-position: center; /* لتوسيط الصورة */
+    background-attachment: fixed; /* لتثبيت الصورة أثناء التمرير */
+    color: white; /* تغيير لون النص ليكون مناسباً مع الخلفية */
+}
+/* تعيين صورة خلفية لصفحة الخدمات */
+.page-services {
+    background-image: url('images/صور4.jpg'); /* استبدل بمسار الصورة الصحيح */
+    background-size: cover; /* لجعل الصورة تغطي الخلفية بالكامل */
+    background-position: center; /* لوضع الصورة في المنتصف */
+    background-attachment: fixed; /* لجعل الصورة ثابتة أثناء التمرير */
+    color: white; /* لجعل النص واضحاً */
+}
+/* تنسيق مربع النص */
+.text-box {
+    background-color: #f9f9f9; /* لون خلفية المربع في الوضع العادي */
+    border: 2px solid #ddd; /* حدود المربع بلون رمادي */
+    padding: 20px; /* مسافة داخل المربع */
+    border-radius: 10px; /* منح الزوايا حواف مستديرة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف حول المربع */
+    max-width: 80%; /* الحد الأقصى للعرض */
+    margin: 20px auto; /* وضع المربع في المنتصف */
+    font-family: Arial, sans-serif; /* الخط المستخدم */
+    transition: all 0.3s ease; /* تأثير الانتقال عند تغيير الألوان */
+}
+
+#descriptionText {
+    font-size: 16px; /* حجم الخط داخل النص */
+    color: #333; /* لون النص في الوضع العادي */
+    line-height: 1.5; /* ارتفاع السطر لتحسين قراءة النص */
+}
+
+/* تنسيق الوضع الليلي */
+@media (prefers-color-scheme: dark) {
+    .text-box {
+        background-color: #333; /* خلفية المربع في الوضع الليلي */
+        border: 2px solid #444; /* حدود المربع بلون داكن */
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* إضافة ظل خفيف مع تأثير في الوضع الليلي */
+    }
+
+    #descriptionText {
+        color: #fff; /* تغيير لون النص إلى الأبيض في الوضع الليلي */
+    }
+}
+/* تنسيق مربع النص */
+.text-box {
+    background-color: #f9f9f9; /* خلفية المربع في الوضع العادي */
+    border: 2px solid #ddd; /* حدود المربع بلون رمادي */
+    padding: 20px; /* مسافة داخل المربع */
+    border-radius: 10px; /* منح الزوايا حواف مستديرة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف حول المربع */
+    max-width: 80%; /* الحد الأقصى للعرض */
+    margin: 20px auto; /* وضع المربع في المنتصف */
+    font-family: Arial, sans-serif; /* الخط المستخدم */
+    transition: all 0.3s ease; /* تأثير الانتقال عند تغيير الألوان */
+}
+
+#descriptionText {
+    font-size: 16px; /* حجم الخط داخل النص */
+    color: #333; /* لون النص في الوضع العادي */
+    line-height: 1.5; /* ارتفاع السطر لتحسين قراءة النص */
+}
+
+/* تنسيق الوضع الليلي */
+@media (prefers-color-scheme: dark) {
+    .text-box {
+        background-color: #333; /* خلفية المربع في الوضع الليلي */
+        border: 2px solid #444; /* حدود المربع بلون داكن */
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* إضافة ظل خفيف مع تأثير في الوضع الليلي */
+    }
+
+    #descriptionText {
+        color: #fff; /* تغيير لون النص إلى الأبيض في الوضع الليلي */
+    }
+}
+.page-products {
+    background-image: url('images/—Pngtree—golf\ an\ 18hole\ course\ with_15430796.jpg'); /* استبدل بمسار الصورة الصحيح */
+    background-size: cover; /* لجعل الصورة تغطي الخلفية بالكامل */
+    background-position: center; /* لوضع الصورة في المنتصف */
+    background-attachment: fixed; /* لجعل الصورة ثابتة أثناء التمرير */
+    color: white; /* لجعل النص واضحاً */
+}
+.tips {
+    background-image: url('images/.'); /* استبدل بمسار الصورة الصحيح */
+    background-size: cover; /* لجعل الصورة تغطي الخلفية بالكامل */
+    background-position: center; /* لوضع الصورة في المنتصف */
+    background-attachment: fixed; /* لجعل الصورة ثابتة أثناء التمرير */
+    color: white; /* لجعل النص واضحاً */
+}
+.gallery img {
+    display: block !important;  /* يجبر الصور على الظهور */
+    visibility: visible !important;  /* يضمن عدم إخفاء الصور */
+    opacity: 1 !important;  /* يجعل الصور شفافة بالكامل */
+    position: relative !important;  /* يضمن عدم وجود مشاكل في الترتيب */
+    z-index: 1 !important;  /* يضع الصور فوق أي عنصر آخر */
+    width: 100% !important;  /* يضمن أن الصور تأخذ حجمها الكامل */
+    height: auto !important;  /* يحافظ على الأبعاد النسبية للصور */
+}
+/* شريط التنقل في الوضع النهاري */
+.navbar {
+    background-color: #f4f4f4; /* شريط التنقل بلون أبيض خفيف */
+    color: #333333; /* النصوص باللون الداكن */
+    padding: 15px 0;
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* إضافة حدود خفيفة أسفل شريط التنقل */
+}
+
+/* شريط التنقل في الوضع الليلي */
+body.dark-mode .navbar {
+    background-color: #333333; /* شريط التنقل باللون الأسود الخفيف */
+    color: #ffffff; /* النصوص باللون الأبيض */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* إضافة حدود خفيفة بيضاء أسفل شريط التنقل */
+}
+
+/* وضوح الأزرار في شريط التنقل */
+.navbar a {
+    color: inherit; /* النصوص في الروابط ترث اللون من شريط التنقل */
+    text-decoration: none; /* إزالة التسطير من الروابط */
+    font-weight: bold; /* جعل النصوص في الروابط عريضة لزيادة الوضوح */
+}
+
+/* عند التمرير على الروابط في شريط التنقل */
+.navbar a:hover {
+    color: #1abc9c; /* تغيير اللون إلى الأخضر المميز عند التمرير */
+}
+
+/* وضوح الأزرار في الوضع الليلي */
+body.dark-mode .navbar a {
+    color: #ffffff; /* النصوص في الروابط باللون الأبيض في الوضع الليلي */
+}
+
+/* عند التمرير على الروابط في الوضع الليلي */
+body.dark-mode .navbar a:hover {
+    color: #1abc9c; /* تغيير اللون عند التمرير في الوضع الليلي */
+}
+/* التأثيرات على الأزرار المتفرعة داخل "اتصل بنا" في الوضع الليلي */
+body.dark-mode .nav-links li ul {
+    background-color: #444;  /* خلفية داكنة للقائمة الفرعية في الوضع الليلي */
+    border-radius: 5px;      /* إضافة تقويس للحواف */
+}
+
+body.dark-mode .nav-links li ul li a {
+    color: #fff;             /* نص أبيض */
+    background-color: #444;  /* خلفية داكنة للروابط */
+    padding: 10px;           /* إضافة حشو حول الروابط */
+    text-decoration: none;   /* إزالة التسطير */
+    display: block;          /* لتوسيع الرابط على كامل المساحة */
+}
+
+body.dark-mode .nav-links li ul li a:hover {
+    background-color: #555;  /* تغيير اللون عند التمرير */
+}
+
+/* التأثيرات على الأزرار المتفرعة داخل "اتصل بنا" في الوضع النهاري */
+body:not(.dark-mode) .nav-links li ul {
+    background-color: #f8f9fa;  /* خلفية فاتحة للقائمة الفرعية في الوضع النهاري */
+    border-radius: 5px;         /* إضافة تقويس للحواف */
+}
+
+body:not(.dark-mode) .nav-links li ul li a {
+    color: #333;                /* نص داكن */
+    background-color: #f8f9fa;  /* خلفية فاتحة للروابط */
+    padding: 10px;              /* إضافة حشو حول الروابط */
+    text-decoration: none;      /* إزالة التسطير */
+    display: block;             /* لتوسيع الرابط على كامل المساحة */
+}
+
+body:not(.dark-mode) .nav-links li ul li a:hover {
+    background-color: #e2e6ea;  /* تغيير اللون عند التمرير */
+}
+/* الوضع الليلي (Dark Mode) لصفحة الخدمات */
+body.page-services.dark-mode {
+    background-color: #121212; /* خلفية داكنة */
+    color: #e0e0e0; /* النصوص بلون فاتح */
+}
+
+/* تحسين وضوح النصوص في القسم التعريفي (الخدمات) */
+body.page-services.dark-mode .services-intro,
+body.page-services.dark-mode .services-list {
+    color: #e0e0e0; /* النصوص بلون فاتح */
+}
+
+body.page-services.dark-mode .services-intro h2,
+body.page-services.dark-mode .service-item h3 {
+    color: #ffffff; /* العناوين بلون أبيض */
+}
+
+/* تحسين وضوح النصوص داخل العناصر */
+body.page-services.dark-mode .service-item ul li {
+    color: #d1d1d1; /* النصوص داخل القوائم بلون فاتح لزيادة التباين */
+}
+
+/* تحسين النص الوصفي */
+body.page-services.dark-mode .services-description {
+    color: #b0b0b0; /* النص الوصفي بلون فاتح مائل للرمادي */
+}
+
+/* التأثير على الروابط (بدون تأثير اللون عند التمرير) */
+body.page-services.dark-mode a {
+    color: inherit;  /* لا تغيير في لون الروابط */
+    text-decoration: none; /* إزالة التسطير */
+}
+
+body.page-services.dark-mode a:hover {
+    color: inherit;  /* لا تغيير في اللون عند التمرير */
+    text-decoration: none; /* إزالة التسطير عند التمرير */
+}
+
+/* تحسين وضوح النصوص في الفوتر */
+body.page-services.dark-mode footer {
+    background-color: #333;  /* خلفية داكنة للفوتر */
+    color: #ddd;             /* النصوص بلون فاتح */
+    padding: 20px 0;
+}
+
+body.page-services.dark-mode footer a {
+    color: inherit;  /* لا تغيير في لون الروابط */
+}
+
+body.page-services.dark-mode footer a:hover {
+    color: inherit; /* لا تغيير في اللون عند التمرير */
+}
+
+/* تحسين الروابط الاجتماعية */
+body.page-services.dark-mode footer .social-media a {
+    color: #ddd; /* الروابط الاجتماعية بلون فاتح */
+    margin-right: 10px;
+}
+
+body.page-services.dark-mode footer .social-media a:hover {
+    color: #ff6f61; /* تغيير اللون عند التمرير إلى اللون البرتقالي */
+}
+
+/* تحسين زر العودة للأعلى */
+body.page-services.dark-mode #backToTop {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+body.page-services.dark-mode #backToTop:hover {
+    background-color: #1abc9c;
+    color: #fff;
+}
+/* المربع الذي يحتوي على الترحيب والصورة في صفحة الخدمات */
+body.page-services .services-intro {
+    background-color: #ffffff; /* خلفية فاتحة في الوضع النهاري */
+    color: #333; /* النصوص باللون الأسود في الوضع النهاري */
+}
+
+body.page-services.dark-mode .services-intro {
+    background-color: #1a1a1a; /* خلفية داكنة في الوضع اليلي */
+    color: #e0e0e0; /* النصوص بلون فاتح في الوضع اليلي */
+}
+
+/* تأثير الصورة داخل المربع */
+body.page-services .services-intro .services-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* تأثير النص داخل المربع */
+body.page-services .services-intro .services-text h2 {
+    color: #333; /* لون النص في العنوان بالوضع النهاري */
+}
+
+body.page-services.dark-mode .services-intro .services-text h2 {
+    color: #ffffff; /* لون النص في العنوان بالوضع اليلي */
+}
+
+body.page-services .services-intro .services-text p {
+    color: #666; /* النصوص الوصفية بالوضع النهاري */
+}
+
+body.page-services.dark-mode .services-intro .services-text p {
+    color: #d1d1d1; /* النصوص الوصفية في الوضع اليلي */
+}
+/* تخصيص الأزرار في التبويبات */
+body.packages .tabs .tab-button {
+    background-color: #f4f4f4; /* خلفية فاتحة في الوضع النهاري */
+    color: #333; /* النص باللون الأسود في الوضع النهاري */
+    padding: 12px 20px;
+    border: 1px solid #ddd; /* حدود باهتة */
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* تخصيص الأزرار في الوضع اليلي */
+body.packages.dark-mode .tabs .tab-button {
+    background-color: #333; /* خلفية داكنة في الوضع اليلي */
+    color: #e0e0e0; /* النص باللون الفاتح في الوضع اليلي */
+    border: 1px solid #444;
+}
+
+/* تغيير لون الزر عند التمرير عليه */
+body.packages .tabs .tab-button:hover {
+    background-color: #007BFF; /* خلفية زرقاء عند التمرير */
+    color: white; /* النص باللون الأبيض عند التمرير */
+}
+
+/* تخصيص الزر المختار ليظهر بلون مميز */
+body.packages .tabs .tab-button.active {
+    background-color: #4CAF50; /* خلفية خضراء عند اختيار الزر */
+    color: white; /* النص باللون الأبيض عند اختيار الزر */
+    border: 1px solid #388E3C; /* حدود خضراء عند اختيار الزر */
+}
+/* تخصيص النصوص في وضع الوضع الداكن */
+body.dark-mode {
+    background-color: #121212; /* الخلفية الداكنة */
+    color: #e0e0e0; /* النصوص باللون الفاتح */
+}
+
+/* تخصيص النصوص في المحتوى */
+body.dark-mode .contact-intro h2,
+body.dark-mode .contact-intro p,
+body.dark-mode .contact-info h3,
+body.dark-mode .contact-info p,
+body.dark-mode .contact-form label,
+body.dark-mode .feedback h3,
+body.dark-mode .feedback p {
+    color: #e0e0e0; /* النص باللون الفاتح */
+}
+
+/* تخصيص الروابط في الوضع الداكن */
+body.dark-mode a {
+    color: #0099ff; /* تغيير لون الروابط */
+}
+
+/* تخصيص الأزرار في الوضع الداكن */
+body.dark-mode .submit-btn {
+    background-color: #4CAF50; /* اللون الأخضر للأزرار */
+    color: white;
+}
+
+/* تخصيص الروابط عند التمرير عليها */
+body.dark-mode a:hover {
+    color: #ff9900; /* تغيير اللون عند التمرير على الرابط */
+}
+/* تخصيص الزر النشط في شريط التنقل */
+.nav-links .active {
+    background-color: #4CAF50; /* تغيير اللون الخلفي للزر النشط */
+    color: white; /* تغيير اللون النصي للزر النشط */
+}
+
