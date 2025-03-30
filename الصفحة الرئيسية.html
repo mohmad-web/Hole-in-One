@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <body class="home-page">
-      
-            <!-- تحميل مكتبة AOS -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-         
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- مساحة فوق الشريط (للشعار) -->
-<div class="top-space">
-    <<img src="https://github.com/mohmad-web/Hole-in-One/blob/main/%D8%B5%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B9%D8%A7%D8%B1.png?raw=true" alt="شعار الموقع">
->
-</div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- تحميل مكتبة AOS للتأثيرات -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 </head>
 
-<body data-page="index">
+<body class="home-page" data-page="index">
 
     <!-- ✅ الهيدر (شريط التنقل) -->
     <header>
@@ -37,7 +26,7 @@
                 <li><a id="contactLink" href="اتصل بنا.html">اتصل بنا</a>
                     <ul>
                         <li><a href="أمكانية الوصول.html">إمكانية الوصول</a></li>
-                        <li><a href=https://docs.google.com/forms/d/e/1FAIpQLSeaAWOxeQLIoGWR5OIYgc5wPRXuv8-ZXeczKoXfpaJu0lo_Kw/viewform?usp=sharing>الاستبيان</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeaAWOxeQLIoGWR5OIYgc5wPRXuv8-ZXeczKoXfpaJu0lo_Kw/viewform?usp=sharing">الاستبيان</a></li>
                     </ul>
                 </li>
             </ul>
@@ -47,7 +36,6 @@
         </nav>
         
         <div id="clock">00:00:00</div>
-        </nav>
     </header>
     
     <main>
@@ -57,13 +45,15 @@
                 <div class="text-content">
                     <h2 id="hero-title">مرحبًا بكم في <span class="highlight">هول إن ون</span></h2>
                     <p id="hero-description">
-                        وجهتكم المثالية لعشاق الجولف في البرتغال! نقدم تجربة استثنائية تشمل ملاعب بطولات عالمية، إقامة فاخرة،
-                        وخدمات مصممة خصيصًا لضمان راحتكم.
+                        وجهتكم المثالية لعشاق الجولف في البرتغال! نقدم تجربة استثنائية تشمل ملاعب بطولات عالمية، إقامة فاخرة، وخدمات مصممة خصيصًا لضمان راحتكم.
                     </p>
-                    <!-- زر "استكشف المزيد" في مكان واحد فقط -->
                     <a id="exploreButton" href="من نحن.html" class="btn-explore">استكشف المزيد</a>
                 </div>
                 <div class="image-content">
+                    <!-- الشعار -->
+                    <div class="top-space">
+                        <img src="https://github.com/mohmad-web/Hole-in-One/blob/main/%D8%B5%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B9%D8%A7%D8%B1.png?raw=true" alt="شعار الموقع">
+                    </div>
                 </div>
             </div>
         </section>
@@ -72,83 +62,46 @@
             <h2 id="gallery-title">جولة بصرية في منتجعنا</h2>
             <div class="image-grid">
                 <div class="image-box">
-                     <img src="https://github.com/mohmad-web/Hole-in-One/blob/main/images/%D8%B5%D9%88%D8%B1%D8%A9%20%D9%84%D9%84%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B1%D9%8A%D8%B3%D9%8A%D8%A9.jpg?raw=true" alt="صورة الصفحة الرئيسية"> alt="ملعب جولف فاخر" data-aos="fade-up">
+                    <img src="https://github.com/mohmad-web/Hole-in-One/blob/main/images/%D8%B5%D9%88%D8%B1%D8%A9%20%D9%84%D9%84%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B1%D9%8A%D8%B3%D9%8A%D8%A9.jpg?raw=true" alt="ملعب جولف فاخر" data-aos="fade-up">
                     <p id="image1-description">ملعب جولف فاخر</p>
                 </div>
                 <div class="image-box">
-                   <img src="https://github.com/mohmad-web/Hole-in-One/blob/main/images/صورة%20للصفحة%20الرئيسية2.jpg?raw=true" alt="صورة الصفحة الرئيسية">
+                    <img src="https://github.com/mohmad-web/Hole-in-One/blob/main/images/%D8%B5%D9%88%D8%B1%D8%A9%20%D9%84%D9%84%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B1%D9%8A%D8%B3%D9%8A%D8%A92.jpg?raw=true" alt="مسبح راقٍ">
                     <p id="image2-description">مسبح راقٍ</p>
                 </div>
                 <div class="image-box">
-                    <img src="https://github.com/mohmad-web/Hole-in-One/blob/main/images/%D8%B5%D9%88%D8%B1%D8%A9%20%D9%84%D9%84%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B1%D9%8A%D8%B3%D9%8A%D8%A93.jpg?raw=true" alt="صورة الصفحة الرئيسية">
+                    <img src="https://github.com/mohmad-web/Hole-in-One/blob/main/images/%D8%B5%D9%88%D8%B1%D8%A9%20%D9%84%D9%84%D8%B5%D9%81%D8%AD%D8%A9%20%D8%A7%D9%84%D8%B1%D9%8A%D8%B3%D9%8A%D8%A93.jpg?raw=true" alt="إطلالة الغرف الفندقية">
                     <p id="image3-description">إطلالة الغرف الفندقية</p>
-                    <section class="hero" data-aos="fade-up">
-    <div class="hero-container">
-        <div class="text-content">
-            <h2 id="hero-title">مرحبًا بكم في <span class="highlight">هول إن ون</span></h2>
-            <p id="hero-description">
-                وجهتكم المثالية لعشاق الجولف في البرتغال! نقدم تجربة استثنائية تشمل ملاعب بطولات عالمية، إقامة فاخرة، وخدمات مصممة خصيصًا لضمان راحتكم.
-            </p>
-            <a id="exploreButton" href="من نحن.html" class="btn-explore">استكشف المزيد</a>
-        </div>
-
-        <!-- معرض الصور -->
-        <div class="gallery">
-            <div class="gallery-images">
-                <img src="path/to/image1.jpg" alt="صورة 1">
-                <img src="path/to/image2.jpg" alt="صورة 2">
-                <img src="path/to/image3.jpg" alt="صورة 3">
-                <img src="path/to/image4.jpg" alt="صورة 4">
-            </div>
-            <!-- الأسهم -->
-            <div class="arrow arrow-left">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="arrow arrow-right">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-        </div>
-    </div>
-</section>
-
                 </div>
             </div>
         </section>
     </main>
-    <body>
-       
     
-        
-    
-    
-   <!-- تذييل الصفحة -->
-<footer>
-    <h3>Hole In One - جميع الحقوق محفوظة</h3>
-    <ul>
-        <li><a href="الصفحة الرئيسية.html">الرئيسية</a></li>
-        <li><a href="من نحن.html">من نحن</a></li>
-        <li><a href="الخدمات.html">الخدمات</a></li>
-        <li><a href="المنتجات.html">المنتجات</a></li>
-        <li><a href="النصائح.html">النصائح</a></li>
-        <li><a href="الباقات.html">الباقات</a></li>
-        <li><a href="اتصل بنا.html">اتصل بنا</a></li>
-    </ul>
-    <div class="social-media">
-        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    </div>
-    <div class="email">
-        <p>لأي استفسار، يمكنك التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@holeinone.com">info@holeinone.com</a></p>
-    </div>
-    <div class="footer-logo">
-        <img src="صورة الشعار.png" alt="Logo">
-    </div>
-    <button id="backToTop" class="back-to-top">
-        ↑
-    </button>
-</footer>
+    <footer>
+        <h3>Hole In One - جميع الحقوق محفوظة</h3>
+        <ul>
+            <li><a href="الصفحة الرئيسية.html">الرئيسية</a></li>
+            <li><a href="من نحن.html">من نحن</a></li>
+            <li><a href="الخدمات.html">الخدمات</a></li>
+            <li><a href="المنتجات.html">المنتجات</a></li>
+            <li><a href="النصائح.html">النصائح</a></li>
+            <li><a href="الباقات.html">الباقات</a></li>
+            <li><a href="اتصل بنا.html">اتصل بنا</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+        <div class="email">
+            <p>لأي استفسار، يمكنك التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@holeinone.com">info@holeinone.com</a></p>
+        </div>
+        <div class="footer-logo">
+            <img src="صورة الشعار.png" alt="Logo">
+        </div>
+        <button id="backToTop" class="back-to-top">↑</button>
+    </footer>
 
     <script src="script.js" defer></script>
 </body>
