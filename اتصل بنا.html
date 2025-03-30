@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- تحميل مكتبة AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- إضافة FontAwesome -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init();  // تفعيل تأثيرات AOS عند تحميل الصفحة
+        });
+    </script>
+</head>
+<body data-page="contact">
+
+    <!-- ✅ مساحة فوق الشريط (للشعار) -->
+    <div class="top-space">
+        <img src="صورة الشعار.png" alt="شعار الموقع">
+    </div>
+
+    <!-- ✅ الهيدر وشريط التنقل -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a id="homeLink" href="الصفحة الرئيسية.html">الرئيسية</a></li>
+                <li><a id="aboutLink" href="من نحن.html">من نحن</a></li>
+                <li><a id="servicesLink" href="الخدمات.html">الخدمات</a></li>
+                <li><a id="productsLink" href="المنتجات.html">المنتجات</a></li>
+                <li><a id="tipsLink" href="النصائح.html">النصائح</a></li>
+                <li><a id="packagesLink" href="الباقات.html">الباقات</a></li>
+                <li><a id="contactLink" href="اتصل بنا.html">اتصل بنا</a>
+                    <ul>
+                        <li><a href="أمكانية الوصول.html">إمكانية الوصول</a></li>
+                        <li><a href=https://docs.google.com/forms/d/e/1FAIpQLSeaAWOxeQLIoGWR5OIYgc5wPRXuv8-ZXeczKoXfpaJu0lo_Kw/viewform?usp=sharing>الاستبيان</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-buttons">
+                <button id="toggleDarkMode">🌙</button>
+            </div>
+        </nav>
+        
+        <div id="clock">00:00:00</div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <!-- ✅ مقدمة الصفحة -->
+        <section class="contact-intro" data-aos="fade-up">
+            <h2>تواصل معنا</h2>
+            <p class="service-help">نحن هنا لخدمتك! إذا كنت بحاجة إلى أي مساعدة أو استفسار، يمكنك التواصل معنا عبر الوسائل التالية:</p>
+        </section>
+
+        <!-- ✅ معلومات الاتصال مع التأثيرات -->
+        <section class="contact-info" data-aos="fade-up">
+            <h3>📧 عبر البريد الإلكتروني</h3>
+            <p>لأي استفسارات أو طلبات، يمكنك إرسال بريد إلكتروني إلى:</p>
+            <p><a href="mailto:contact@holeinone.com">contact@holeinone.com</a></p>
+
+            <h3>💬 تواصل معنا عبر وسائل التواصل الاجتماعي</h3>
+            <p>تابعنا على وسائل التواصل الاجتماعي للحصول على آخر الأخبار والعروض:</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/holeinone" target="_blank" class="social-button"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/holeinone" target="_blank" class="social-button"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/holeinone" target="_blank" class="social-button"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+
+        <!-- ✅ مربع إرسال الرسائل مع التأثيرات -->
+        <section class="contact-form" data-aos="fade-up">
+            <h3>أرسل لنا رسالة</h3>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="user-name">اسمك:</label>
+                    <input type="text" id="user-name" name="user-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">بريدك الإلكتروني:</label>
+                    <input type="email" id="user-email" name="user-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-message">رسالتك:</label>
+                    <textarea id="user-message" name="user-message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">إرسال</button>
+            </form>
+        </section>
+
+        <!-- ✅ مربع الشكاوى والاقتراحات -->
+        <section class="feedback" data-aos="fade-up">
+            <h3>الشكاوى والاقتراحات</h3>
+            <p>نحن نقدر ملاحظاتكم! إذا كانت لديك شكوى أو اقتراح، لا تتردد في إرسالها إلينا:</p>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="complaint">التفاصيل:</label>
+                    <textarea id="complaint" name="complaint" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">إرسال</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- ✅ التذييل -->
+    <footer>
+        <h3>Hole In One - جميع الحقوق محفوظة</h3>
+        <ul>
+            <li><a href="الصفحة الرئيسية.html">الرئيسية</a></li>
+            <li><a href="من نحن.html">من نحن</a></li>
+            <li><a href="الخدمات.html">الخدمات</a></li>
+            <li><a href="المنتجات.html">المنتجات</a></li>
+            <li><a href="النصائح.html">النصائح</a></li>
+            <li><a href="الباقات.html">الباقات</a></li>
+            <li><a href="اتصل بنا.html">اتصل بنا</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+        <div class="email">
+            <p>لأي استفسار، يمكنك التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@holeinone.com">info@holeinone.com</a></p>
+        </div>
+        <div class="footer-logo">
+            <img src="صورة الشعار.png" alt="Logo">
+        </div>
+        <button id="backToTop" class="back-to-top">↑</button>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

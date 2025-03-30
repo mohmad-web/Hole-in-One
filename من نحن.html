@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <!-- تحميل مكتبة AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- مساحة فوق الشريط (للشعار) -->
+    <div class="top-space">
+        <img src="صورة الشعار.png" alt="شعار الموقع">
+    </div>
+    <!-- تحميل مكتبة AOS للتأثيرات -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+<body class="page-about">
+    <style>
+        /* تنسيق مربع النص */
+        .text-box {
+            background-color: #f9f9f9; /* خلفية المربع في الوضع العادي */
+            border: 2px solid #ddd; /* حدود المربع بلون رمادي */
+            padding: 30px; /* مسافة داخل المربع */
+            border-radius: 15px; /* منح الزوايا حواف مستديرة */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف حول المربع */
+            max-width: 80%; /* الحد الأقصى للعرض */
+            margin: 20px auto; /* وضع المربع في المنتصف */
+            font-family: Arial, sans-serif; /* الخط المستخدم */
+            transition: all 0.3s ease-in-out; /* تأثير الانتقال عند تغيير الألوان */
+        }
+
+        #descriptionText {
+            font-size: 16px; /* حجم الخط داخل النص */
+            color: #333; /* لون النص في الوضع العادي */
+            line-height: 1.8; /* ارتفاع السطر لتحسين قراءة النص */
+            transition: all 0.3s ease-in-out; /* تأثير الانتقال للنص */
+        }
+
+        /* تنسيق الوضع الليلي */
+        body.dark-mode .text-box {
+            background-color: #333; /* خلفية المربع في الوضع الليلي */
+            border: 2px solid #444; /* حدود المربع بلون داكن */
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2); /* إضافة ظل مع تأثير في الوضع الليلي */
+            transform: translateY(-5px); /* تأثير انتقال مع تحريك المربع في الوضع الليلي */
+        }
+
+        body.dark-mode #descriptionText {
+            color: #fff; /* تغيير لون النص إلى الأبيض في الوضع الليلي */
+        }
+</style>
+<style>
+    /* تنسيق مربع النص */
+    .text-box {
+        background: linear-gradient(145deg, #f9f9f9, #f2f2f2); /* تدرج لوني خلفية المربع */
+        border: 2px solid #ddd; /* حدود المربع بلون رمادي */
+        padding: 30px; /* مسافة داخل المربع */
+        border-radius: 15px; /* منح الزوايا حواف مستديرة */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* إضافة ظل ثقيل حول المربع */
+        max-width: 80%; /* الحد الأقصى للعرض */
+        margin: 20px auto; /* وضع المربع في المنتصف */
+        font-family: 'Arial', sans-serif; /* الخط المستخدم */
+        position: relative; /* لجعل التأثيرات تخرج خارج المربع */
+        transition: all 0.3s ease-in-out; /* تأثير الانتقال عند تغيير الألوان */
+    }
+
+    /* تأثير التفاعل عند مرور الماوس */
+    .text-box:hover {
+        background: linear-gradient(145deg, #e6e6e6, #f9f9f9); /* تغيير التدرج اللوني عند التفاعل */
+        transform: scale(1.05); /* تكبير المربع قليلاً */
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* زيادة الظل */
+    }
+
+    #descriptionText {
+        font-size: 18px; /* حجم الخط داخل النص */
+        color: #333; /* لون النص في الوضع العادي */
+        line-height: 1.8; /* ارتفاع السطر لتحسين قراءة النص */
+        transition: all 0.3s ease-in-out; /* تأثير الانتقال للنص */
+    }
+
+    /* تأثير الظل في الوضع العادي */
+    .text-box::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        background: rgba(0, 0, 0, 0.05); /* تأثير ضوء خفيف حول المربع */
+        border-radius: 12px;
+        z-index: -1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* تنسيق الوضع الليلي */
+    body.dark-mode .text-box {
+        background: linear-gradient(145deg, #333, #444); /* تدرج لوني في الوضع الليلي */
+        border: 2px solid #555; /* حدود المربع بلون داكن */
+        box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2); /* إضافة ظل مع تأثير في الوضع الليلي */
+        transform: translateY(-5px); /* تأثير انتقال مع تحريك المربع في الوضع الليلي */
+    }
+
+    body.dark-mode #descriptionText {
+        color: #fff; /* تغيير لون النص إلى الأبيض في الوضع الليلي */
+    }
+
+    body.dark-mode .text-box::before {
+        background: rgba(255, 255, 255, 0.1); /* تأثير ضوء خفيف حول المربع في الوضع الليلي */
+    }
+
+    /* إضافة شريط علوي داخل المربع */
+    .info-bar {
+        background-color: #ffcc00; /* لون الشريط العلوي */
+        padding: 5px 10px;
+        color: #333;
+        font-weight: bold;
+        border-radius: 5px 5px 0 0;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    </style>
+    <style>
+        /* تحسين تصميم النص في الوضع النهاري */
+        #welcomeMessage {
+            font-family: 'Arial', sans-serif; /* خط عصري */
+            font-size: 2.5em; /* حجم الخط */
+            color: #333; /* لون النص الأساسي */
+            text-align: center;
+            margin: 20px 0;
+            text-transform: capitalize; /* تحويل الحروف إلى الحروف الكبيرة */
+            position: relative;
+            transition: all 0.3s ease; /* تأثير سلس عند تغيير الألوان */
+        }
+
+        .highlight {
+            color: #362e66; /* لون مميز للكلمة */
+            background: linear-gradient(45deg, #362e66, #ffcc00); /* تدرج لوني للخلفية */
+            background-clip: text; /* لتطبيق التدرج على النص */
+            color: transparent; /* لإخفاء النص الأساسي */
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        /* تأثير عند التفاعل مع النص */
+        #welcomeMessage:hover {
+            color: #ff6f00; /* تغيير لون النص عند التمرير */
+            transform: scale(1.05); /* تكبير النص قليلاً */
+        }
+
+        #welcomeMessage .highlight:hover {
+            background: linear-gradient(45deg, #ffcc00, #d3cfcb); /* عكس التدرج عند التفاعل */
+            color: transparent;
+            background-clip: text; /* استمرار استخدام التدرج على النص */
+        }
+
+        /* تدرج لوني للنص عند التفاعل */
+        body.dark-mode #welcomeMessage {
+            color: #fff; /* تغيير اللون إلى الأبيض في الوضع الليلي */
+        }
+
+        body.dark-mode #welcomeMessage .highlight {
+            color: transparent;
+            background: linear-gradient(45deg, #ffcc00, #ff6f00);
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body data-page="about">
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a id="homeLink" href="الصفحة الرئيسية.html">الرئيسية</a></li>
+                <li><a id="aboutLink" href="من نحن.html">من نحن</a></li>
+                <li><a id="servicesLink" href="الخدمات.html">الخدمات</a></li>
+                <li><a id="productsLink" href="المنتجات.html">المنتجات</a></li>
+                <li><a id="tipsLink" href="النصائح.html">النصائح</a></li>
+                <li><a id="packagesLink" href="الباقات.html">الباقات</a></li>
+                <li><a id="contactLink" href="اتصل بنا.html">اتصل بنا</a>
+                    <ul>
+                        <li><a href="أمكانية الوصول.html">إمكانية الوصول</a></li>
+                        <li><a href=https://docs.google.com/forms/d/e/1FAIpQLSeaAWOxeQLIoGWR5OIYgc5wPRXuv8-ZXeczKoXfpaJu0lo_Kw/viewform?usp=sharing>الاستبيان</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-buttons">
+                <button id="toggleDarkMode">🌙</button>
+            </div>
+        </nav>
+        
+        <div id="clock">00:00:00</div>
+        </nav>
+    </header>
+    
+
+    <main>
+        <!-- ✅ قسم التعريف -->
+        <section class="about-section" data-aos="fade-up">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 id="welcomeMessage">مرحبًا بكم في <span class="highlight">هول إن ون</span></h2>
+                    <div class="text-box">
+                        <p id="descriptionText">
+                            هول إن ون هو منتجع جولف فاخر يقع في قلب البرتغال، ويضم ثلاثة ملاعب بطولات عالمية،
+                            بالإضافة إلى مرافق إقامة فاخرة، مطاعم راقية، ومتجر متخصص لمحترفي الجولف. هدفنا هو
+                            تقديم تجربة لا تُنسى لكل زائر، سواء كنت لاعب جولف محترف أو هاوٍ يبحث عن الاستجمام والتحدي.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="C:\Users\Q Store\Desktop\Hole in One-Unit6\images\صورة لصفحة من نحن.avif" alt="منتجع هول إن ون">
+                </div>
+            </div>
+        </section>
+
+        <!-- ✅ قسم الإنجازات -->
+        <section class="achievements" data-aos="fade-up">
+            <h2 class="section-title">إنجازاتنا</h2>
+            <div class="achievements-grid">
+                <div class="achievement-box" data-aos="zoom-in">
+                    <span class="icon">🎖️</span>
+                    <h3>3</h3>
+                    <p>ملاعب جولف</p>
+                </div>
+                <div class="achievement-box" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="icon">🏨</span>
+                    <h3>+200</h3>
+                    <p>غرفة وجناح فاخر</p>
+                </div>
+                <div class="achievement-box" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="icon">🍽️</span>
+                    <h3>5</h3>
+                    <p>مطاعم راقية</p>
+                </div>
+                <div class="achievement-box" data-aos="zoom-in" data-aos-delay="300">
+                    <span class="icon">🏌️‍♂️</span>
+                    <h3>+1000</h3>
+                    <p>دورات تدريبية</p>
+                </div>
+                <div class="achievement-box" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="icon">📦</span>
+                    <h3>3</h3>
+                    <p>باقات متميزة</p>
+                </div>
+                <div class="achievement-box" data-aos="zoom-in" data-aos-delay="600">
+                    <span class="icon">💡</span>
+                    <h3>أحدث</h3>
+                    <p>تقنيات التدريب الرقمي</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Hole In One - جميع الحقوق محفوظة</h3>
+        <ul>
+            <li><a href="الصفحة الرئيسية.html">الرئيسية</a></li>
+            <li><a href="من نحن.html">من نحن</a></li>
+            <li><a href="الخدمات.html">الخدمات</a></li>
+            <li><a href="المنتجات.html">المنتجات</a></li>
+            <li><a href="النصائح.html">النصائح</a></li>
+            <li><a href="الباقات.html">الباقات</a></li>
+            <li><a href="اتصل بنا.html">اتصل بنا</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+        <div class="email">
+            <p>لأي استفسار، يمكنك التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@holeinone.com">info@holeinone.com</a></p>
+        </div>
+        <div class="footer-logo">
+            <img src="صورة الشعار.png" alt="Logo">
+        </div>
+        <button id="backToTop" class="back-to-top">↑</button>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

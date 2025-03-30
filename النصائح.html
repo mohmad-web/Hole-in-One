@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- تحميل مكتبة AOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- مساحة فوق الشريط (للشعار) -->
+    <div class="top-space">
+        <img src="صورة الشعار.png" alt="شعار الموقع">
+    </div>   
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+</head>
+<body data-page="tips">
+    <body class="tips">
+    <!-- ✅ الهيدر وشريط التنقل -->
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a id="homeLink" href="الصفحة الرئيسية.html">الرئيسية</a></li>
+                <li><a id="aboutLink" href="من نحن.html">من نحن</a></li>
+                <li><a id="servicesLink" href="الخدمات.html">الخدمات</a></li>
+                <li><a id="productsLink" href="المنتجات.html">المنتجات</a></li>
+                <li><a id="tipsLink" href="النصائح.html">النصائح</a></li>
+                <li><a id="packagesLink" href="الباقات.html">الباقات</a></li>
+                <li><a id="contactLink" href="اتصل بنا.html">اتصل بنا</a>
+                    <ul>
+                        <li><a href="أمكانية الوصول.html">إمكانية الوصول</a></li>
+                        <li><a href=https://docs.google.com/forms/d/e/1FAIpQLSeaAWOxeQLIoGWR5OIYgc5wPRXuv8-ZXeczKoXfpaJu0lo_Kw/viewform?usp=sharing>الاستبيان</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-buttons">
+                <button id="toggleDarkMode">🌙</button>
+            </div>
+        </nav>
+        
+        <div id="clock">00:00:00</div>
+        </nav>
+    </header>
+    
+ <style>
+        /* إعدادات CSS للمعرض */
+        .image-gallery {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-container {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .image-slide {
+            min-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-slide img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image-text {
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+    <main>
+        <!-- ✅ مقدمة الصفحة -->
+        <section class="tips-intro" data-aos="fade-up">
+            <h2>نصائحنا لاحتراف الجولف في منتجع <span class="highlight">هول إن ون</span></h2>
+            <p>مرحبًا بك في منتجع "هول إن ون"، وجهتك المثالية لتجربة جولف فريدة من نوعها في قلب البرتغال. نقدم لك مجموعة من النصائح القيمة التي ستساعدك على تحسين مهاراتك والاستمتاع بتجربة اللعب لدينا على أكمل وجه.</p>
+        </section>
+        
+      
+        <!-- ✅ قائمة النصائح -->
+        <section class="tips-list">
+            <div class="tip-item" data-aos="fade-up">
+                <span class="icon">⛳</span>
+                <h3>1. اختيار الملعب المناسب</h3>
+                <p>منتجع "هول إن ون" يضم ثلاثة ملاعب جولف عالمية المستوى، اختر الملعب المناسب لمهاراتك واستمتع بتجربة فريدة.</p>
+            </div>
+
+            <div class="tip-item" data-aos="fade-up" data-aos-delay="100">
+                <span class="icon">🎯</span>
+                <h3>2. استمتع بجلسات التدريب المتخصصة</h3>
+                <p>نقدم مجموعة من جلسات التدريب على يد محترفين لمساعدتك على تحسين مهاراتك في الجولف.</p>
+            </div>
+
+            <div class="tip-item" data-aos="fade-up" data-aos-delay="200">
+                <span class="icon">🏌️‍♂️</span>
+                <h3>3. استخدام الأدوات بشكل صحيح</h3>
+                <p>استخدم العتاد الصحيح لكل نوع من الملاعب لضمان تجربة لعب متميزة.</p>
+            </div>
+
+            <div class="tip-item" data-aos="fade-up" data-aos-delay="300">
+                <span class="icon">🍽️</span>
+                <h3>4. التمتع بتجربة الطعام الفاخرة</h3>
+                <p>بعد يوم مليء بالتحديات على الملاعب، استمتع بأفضل الأطباق الفاخرة في مطاعم المنتجع.</p>
+            </div>
+
+            <div class="tip-item" data-aos="fade-up" data-aos-delay="400">
+                <span class="icon">📦</span>
+                <h3>5. احجز حزمة جولف مخصصة</h3>
+                <p>احصل على تجربة متكاملة بحجز باقات الجولف المتميزة التي تناسب احتياجاتك.</p>
+            </div>
+
+            <div class="tip-item" data-aos="fade-up" data-aos-delay="500">
+                <span class="icon">💡</span>
+                <h3>6. التدريب الرقمي والتقنيات الحديثة</h3>
+                <p>نحن في "هول إن ون" نؤمن بأهمية التكنولوجيا، نوفر أحدث تقنيات التدريب الرقمي لتحسين مهاراتك.</p>
+            </div>
+
+            <div class="tip-item" data-aos="fade-up" data-aos-delay="600">
+                <span class="icon">🧘‍♂️</span>
+                <h3>7. الراحة والتجديد</h3>
+                <p>استمتع بجلسات التدليك والعلاج الطبيعي بعد اللعب للحفاظ على أفضل أداء لك.</p>
+            </div>
+
+            <div class="tip-item" data-aos="fade-up" data-aos-delay="700">
+                <span class="icon">🛺</span>
+                <h3>8. احجز لجولات خاصة</h3>
+                <p>استمتع بجولات خاصة في المنتجع مع مرشدين محترفين لتجربة فريدة وممتعة.</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ✅ الفوتر -->
+    <footer>
+        <h3>Hole In One - جميع الحقوق محفوظة</h3>
+        <ul>
+            <li><a href="الصفحة الرئيسية.html">الرئيسية</a></li>
+            <li><a href="من نحن.html">من نحن</a></li>
+            <li><a href="الخدمات.html">الخدمات</a></li>
+            <li><a href="المنتجات.html">المنتجات</a></li>
+            <li><a href="النصائح.html">النصائح</a></li>
+            <li><a href="الباقات.html">الباقات</a></li>
+            <li><a href="اتصل بنا.html">اتصل بنا</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+        <div class="email">
+            <p>لأي استفسار، يمكنك التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@holeinone.com">info@holeinone.com</a></p>
+        </div>
+        <div class="footer-logo">
+            <img src="صورة الشعار.png" alt="Logo">
+        </div>
+        <button id="backToTop" class="back-to-top">↑</button>
+    </footer>
+
+    <script src="script.js" defer></script>
+    
+</body>
+</html>

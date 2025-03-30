@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="top-space"><!-- تحميل مكتبة AOS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <img src="صورة الشعار.png" alt="شعار الموقع">
+    </div>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CSS لزر العودة للأعلى */
+        #backToTop {
+    position: absolute; /* تحديد الموقع بشكل مطلق */
+    bottom: 10px; /* المسافة من أسفل الفوتر */
+    left: 50%; /* تحديد مركز الزر */
+    transform: translateX(-50%); /* محاذاة الزر بشكل دقيق في المنتصف */
+    background-color: #7f00b7; /* اللون البنفسجي */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%; /* شكل دائري */
+    font-size: 18px;
+    cursor: pointer;
+    display: none; /* الزر مخفي بشكل افتراضي */
+    opacity: 0.8; /* الشفافية */
+    z-index: 9999; /* طبقة عالية لضمان ظهور الزر فوق العناصر الأخرى */
+}
+
+        /* عند التمرير يظهر الزر */
+        #backToTop.show {
+            display: block; /* يظهر الزر */
+        }
+
+        /* عند التمرير فوق الزر، نغير اللون */
+        #backToTop:hover {
+            background-color: #5e00a1;
+            opacity: 1; /* الشفافية تصبح كاملة */
+        }
+    </style>
+</head>
+<body data-page="accessibility">
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a id="homeLink" href="الصفحة الرئيسية.html">الرئيسية</a></li>
+                <li><a id="aboutLink" href="من نحن.html">من نحن</a></li>
+                <li><a id="servicesLink" href="الخدمات.html">الخدمات</a></li>
+                <li><a id="productsLink" href="المنتجات.html">المنتجات</a></li>
+                <li><a id="tipsLink" href="النصائح.html">النصائح</a></li>
+                <li><a id="packagesLink" href="الباقات.html">الباقات</a></li>
+                <li><a id="contactLink" href="اتصل بنا.html">اتصل بنا</a>
+                    <ul>
+                        <li><a href="أمكانية الوصول.html">إمكانية الوصول</a></li>
+                        <li><a href=https://docs.google.com/forms/d/e/1FAIpQLSeaAWOxeQLIoGWR5OIYgc5wPRXuv8-ZXeczKoXfpaJu0lo_Kw/viewform?uspsharing>الاستبيان</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-buttons">
+                <button id="toggleDarkMode">🌙</button>
+            </div>
+        </nav>
+        <div id="clock">00:00:00</div>
+            
+        </nav>
+    </header>
+    
+    <main>
+        <section class="access-intro">
+            <h2>إمكانية الوصول في هول إن ون</h2>
+            <p>نحن نعمل على توفير تجربة سلسة ومريحة لجميع ضيوفنا بغض النظر عن قدراتهم أو احتياجاتهم الخاصة.</p>
+        </section>
+
+        <section class="access-features">
+            <h2>التزامنا بإمكانية الوصول</h2>
+            <p>نحن ملتزمون بتوفير بيئة شاملة لجميع الزوار. لقد صممنا موقعنا وخدماتنا لتلبية معايير إمكانية الوصول العالمية.</p>
+
+            <!-- Feature 1 -->
+            <div class="feature-item">
+                <div class="feature-header">
+                    <h3>1. إمكانية الوصول إلى الموقع الإلكتروني</h3>
+                    <button class="details-btn" onclick="toggleDetails(this)">عرض التفاصيل</button>
+                </div>
+                <div class="feature-details">
+                    <p>تصميم متجاوب يتكيف مع جميع الأجهزة، سواء كانت هواتف محمولة، أجهزة لوحية، أو شاشات كبيرة. إمكانية تباين الألوان لتناسب احتياجات جميع الزوار.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-item">
+                <div class="feature-header">
+                    <h3>2. إمكانية الوصول إلى المرافق والخدمات</h3>
+                    <button class="details-btn" onclick="toggleDetails(this)">عرض التفاصيل</button>
+                </div>
+                <div class="feature-details">
+                    <p>ممرات ومسارات مصممة خصيصًا لتسهيل الحركة لذوي الاحتياجات الخاصة. مركبات جولف مجهزة لخدمة الزوار ذوي الإعاقات الحركية.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-item">
+                <div class="feature-header">
+                    <h3>3. خدمات دعم مخصصة</h3>
+                    <button class="details-btn" onclick="toggleDetails(this)">عرض التفاصيل</button>
+                </div>
+                <div class="feature-details">
+                    <p>فريق دعم مدرب لمساعدة الضيوف ذوي الاحتياجات الخاصة. توفير معدات خاصة بناءً على الطلب لضمان تجربة لعب مريحة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback">
+            <h2>ملاحظاتكم تهمنا</h2>
+            <p>نحن نسعى لتحسين خدماتنا باستمرار. إذا كان لديك أي اقتراحات أو احتياجات خاصة، لا تتردد في التواصل معنا.</p>
+        </section>
+    </main>
+
+   <!-- ✅ الفوتر -->
+   <footer>
+    <h3>Hole In One - جميع الحقوق محفوظة</h3>
+    <ul>
+        <li><a href="الصفحة الرئيسية.html">الرئيسية</a></li>
+        <li><a href="من نحن.html">من نحن</a></li>
+        <li><a href="الخدمات.html">الخدمات</a></li>
+        <li><a href="المنتجات.html">المنتجات</a></li>
+        <li><a href="النصائح.html">النصائح</a></li>
+        <li><a href="الباقات.html">الباقات</a></li>
+        <li><a href="اتصل بنا.html">اتصل بنا</a></li>
+    </ul>
+    <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+    <div class="email">
+        <p>لأي استفسار، يمكنك التواصل معنا عبر البريد الإلكتروني: <a href="mailto:info@holeinone.com">info@holeinone.com</a></p>
+    </div>
+    <div class="footer-logo">
+        <img src="صورة الشعار.png" alt="Logo">
+    </div>
+    <button id="backToTop" class="back-to-top">↑</button>
+</footer>
+
+    <script>
+        function toggleDetails(button) {
+            const details = button.closest('.feature-item').querySelector('.feature-details');
+            const btnText = button.textContent;
+            
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
+                button.textContent = 'إخفاء التفاصيل';
+            } else {
+                details.style.display = 'none';
+                button.textContent = 'عرض التفاصيل';
+            }
+        }
+
+        const toggleDarkModeBtn = document.getElementById('toggleDarkMode');
+        toggleDarkModeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+    function updateClock() {
+        const clockElement = document.getElementById('clock');
+        if (!clockElement) return; // إذا لم يكن العنصر موجودًا، لا تفعل شيئًا
+
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        let period = "AM";
+
+        if (hours >= 12) {
+            period = "PM";
+            if (hours > 12) {
+                hours -= 12;
+            }
+        } else if (hours === 0) {
+            hours = 12;
+        }
+
+        hours = (hours < 10) ? '0' + hours : hours;
+        minutes = (minutes < 10) ? '0' + minutes : minutes;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+        clockElement.textContent = `${hours}:${minutes}:${seconds} ${period}`;
+    }
+
+    if (document.getElementById("clock")) {
+        updateClock();
+        setInterval(updateClock, 1000);
+        console.log("✅ الساعة تعمل في هذه الصفحة!");
+    } else {
+        console.error("❌ عنصر الساعة غير موجود!");
+    }
+});
+
+        // عند التمرير لأسفل أكثر من 100 بكسل يظهر الزر
+        window.onscroll = function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.add('show'); // إضافة كلاس لإظهار الزر
+            } else {
+                backToTopBtn.classList.remove('show'); // إزالة كلاس لإخفاء الزر
+            }
+        };
+
+        // عند النقر على الزر، العودة إلى أعلى الصفحة
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
